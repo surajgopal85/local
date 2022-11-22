@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get '/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
 
   resources :trips
+
+  # get '/survey', to: 'profiles#survey', as: :survey
+
+  # post '/profile',
 end
