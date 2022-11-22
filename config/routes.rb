@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   resources :trips
 
-  # get '/survey', to: 'profiles#survey', as: :survey
-
-  # post '/profile',
+  get '/survey', to: 'profiles#survey', as: :survey
+  post '/profile', to: 'profiles#create'
+  get '/profile', to: 'profiles#show'
+  get '/profile/edit', to: 'profiles#edit'
+  patch '/profile', to: 'profiles#update'
+  delete '/profile', to: 'profiles#destroy'
 end
