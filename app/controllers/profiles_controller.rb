@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   def survey
+    @tags = Tag.all
 
+    @preference = Preference.new
   end
 
   def create
@@ -8,6 +10,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @user = current_user
 
   end
 
