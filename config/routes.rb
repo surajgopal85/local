@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get '/profile/edit', to: 'profiles#edit'
   patch '/profile', to: 'profiles#update'
   delete '/profile', to: 'profiles#destroy'
+
+  # preferences routes
+  resources :preferences, only: %i[create]
 end
