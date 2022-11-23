@@ -14,10 +14,4 @@ class PreferencesController < ApplicationController
 
     redirect_to profile_path
   end
-
-  private
-
-  def preference_params
-    params.require(:preference).permit(:tag_id, :user_id)
-  end
 end

@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   delete '/profile', to: 'profiles#destroy'
 
   # preferences routes
-  resources :preferences
+  resources :preferences, only: %i[create]
 end
