@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
 
   resources :experiences, only: %i[index show new create]
+
+  get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
+  get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
+
+
  
+
   get '/local_experiences', to: 'experiences#local_experiences', as: :local_experiences
 
 
