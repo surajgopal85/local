@@ -27,13 +27,22 @@ class ExperiencesController < ApplicationController
 
   def my_experiences
     @trip = Trip.find(params[:trip_id])
-    @experiences = Experience.where("location ILIKE ?", "%" + @trip.city + "%")
+    @user_tags = current_user.tags
+
+    @experiences = Experience.where("location ILIKE ?", "%#{@trip.city}%")
+
+    @selected_experiences = []
+    @experiences.select do |experience|
+      experience.tags.each do |tag|
+        @selected_experiences.push(experience) if @user_tags.include?(tag)
+      end
+    end
+    @selected_experiences
   end
 
   def my_experience
     @trip = Trip.find(params[:trip_id])
     @experience = Experience.find(params[:id])
-    # @trip_experience = TripExperience.new
   end
 
   def local_experiences

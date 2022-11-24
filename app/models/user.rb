@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :experiences, foreign_key: :local_id, dependent: :destroy
   has_many :trips, dependent: :destroy
-  has_many :tags, through: :preferences
   has_many :preferences, dependent: :destroy
+  has_many :tags, through: :preferences
 end
