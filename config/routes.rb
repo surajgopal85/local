@@ -2,12 +2,26 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :experiences, only: %i[index show new create]
+
+  resources :experiences, only: %i[index show]
   get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
   get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
 
+  resources :experiences, only: %i[index show new create]
+
+  get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
+  get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
+
+
+ 
+
   get '/local_experiences', to: 'experiences#local_experiences', as: :local_experiences
 
+
+
+  # resources :trips do
+  #   resources :trip_experiences, only: %i[create]
+  # end
   resources :trips
   post 'trips/:trip_id/my_experiences/:id', to: 'trip_experiences#create'
 
