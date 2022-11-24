@@ -1,10 +1,19 @@
-<h1>Here are the experiences that might be interesting for you</h1>
-<ul>
-  <% @experiences.each do |experience| %>
-  <img src="<%= experience.image_url %>" alt="" style="height: 100px">
-  <li><%= experience.name %></li>
-  <li><%= experience.location %></li>
-  <li>Local: <%= experience.local.name %></li>
-  <%= link_to "View This Experience", my_experience_path(@trip, experience) %>
+<% if @experiences.size > 0  %>
+  <% if @experiences.size > 1  %>
+    <h1>Here are <%= @experiences.size %> suggestions for you</h1>
+  <% else %>
+    <h1>We found 1 suggestion for you</h1>
   <% end %>
-</ul>
+  <ul>
+    <% @experiences.each do |experience| %>
+      <img src="<%= experience.image_url %>" alt="" style="height: 100px">
+      <li><%= experience.name %></li>
+      <li><%= experience.location %></li>
+      <li>Local: <%= experience.local.name %></li>
+      <%= link_to "View this suggestion", my_experience_path(@trip, experience) %>
+    <% end %>
+  </ul>
+<% else %>
+  <h1>Sorry, we didn't find any suggestion in <%= @trip.city %> according to your preferences.</h1>
+<% end %>
+<p><%= link_to "I'm done with my trip", trip_path(@trip) %></p>
