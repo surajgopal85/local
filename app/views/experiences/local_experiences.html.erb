@@ -1,0 +1,14 @@
+<h1>Hello, <%= @user.name %>!</h1>
+
+<h3>Your Experiences</h3>
+<% @experiences.each do |experience| %>
+  <h4><%= experience.name %></h4>
+  <h5><%= experience.location %></h5>
+  <img src="<%= experience.image_url %>" alt="" style="height: 100px">
+  <h6>TAGS:</h6>
+  <% experience.experience_tags.each do |exp_tag| %>
+    <ul>
+      <li><%= exp_tag.tag.name %></li>
+    </ul>
+  <% end %>
+<% end %>
