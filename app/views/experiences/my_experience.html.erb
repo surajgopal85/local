@@ -1,0 +1,10 @@
+<div class="container" style="background-image: url(<%= @experience.image_url %>)">
+  <h1><%= @experience.name %></h1>
+  <h3><%= @experience.location %></h3>
+  <p><%= @experience.description %></p>
+  <p><%= @experience.local.name %></p>
+  <br>
+  <br>
+  <p><%=link_to "add this to my trip to #{@trip.city}", my_experience_path(@trip, @experience), data: { 'turbo-method' => :post } %></p>
+  <p><%= link_to "back to suggestions", my_experiences_path(@trip) %></p>
+  <p><%= link_to "I'm done with my trip", trip_path(@trip) %></p>
