@@ -1,0 +1,10 @@
+<h1>Here are the experiences that might be interesting for you</h1>
+<ul>
+  <% @experiences.each do |experience| %>
+  <img src="<%= experience.image_url %>" alt="" style="height: 100px">
+  <li><%= experience.name %></li>
+  <li><%= experience.location %></li>
+  <li>Local: <%= experience.local.name %></li>
+  <%= link_to "View This Experience", my_experience_path(@trip, experience) %>
+  <% end %>
+</ul>

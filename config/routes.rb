@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :experiences, only: %i[index show]
-  get '/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
-  get '/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
+  get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
+  get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
 
+  # resources :trips do
+  #   resources :trip_experiences, only: %i[create]
+  # end
   resources :trips
+  post 'trips/:trip_id/my_experiences/:id', to: 'trip_experiences#create'
 
   get '/survey', to: 'profiles#survey', as: :survey
   post '/profile', to: 'profiles#create'
