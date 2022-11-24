@@ -4,4 +4,5 @@ class Experience < ApplicationRecord
   has_many :experience_tags, dependent: :destroy
   has_many :trips, through: :trip_experiences
   has_many :trip_experiences, dependent: :destroy
+  accepts_nested_attributes_for :experience_tags
 end
