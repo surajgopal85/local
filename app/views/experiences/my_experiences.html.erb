@@ -1,11 +1,8 @@
-<% if @experiences.size > 0  %>
-  <% if @experiences.size > 1  %>
-    <h1>Here are <%= @experiences.size %> suggestions for you</h1>
-  <% else %>
-    <h1>We found 1 suggestion for you</h1>
-  <% end %>
+<% if @selected_experiences.size.positive?  %>
+  <h1>Here are some suggestions for you</h1>
+  <h1>We found <%= @selected_experiences.size %> suggestions for you</h1>
   <ul>
-    <% @experiences.each do |experience| %>
+    <% @selected_experiences.each do |experience| %>
       <img src="<%= experience.image_url %>" alt="" style="height: 100px">
       <li><%= experience.name %></li>
       <li><%= experience.location %></li>
