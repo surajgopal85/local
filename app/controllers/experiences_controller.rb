@@ -25,7 +25,6 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
   end
 
-
   def my_experiences
     @trip = Trip.find(params[:trip_id])
     @experiences = Experience.where("location ILIKE ?", "%" + @trip.city + "%")
@@ -42,12 +41,9 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.where(local_id: current_user.id)
   end
 
-
   private
 
   def experience_params
     params.require(:experience).permit(:name, :location, :description, :image_url, experience_tags_attributes: [:id, :tag_id, :_destroy])
-
   end
-
 end
