@@ -29,6 +29,7 @@ gem "jbuilder"
 
 # custom
 gem "devise"
+gem "cocoon"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

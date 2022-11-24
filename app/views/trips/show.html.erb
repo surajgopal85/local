@@ -1,2 +1,10 @@
 <h1>trip to <%= @trip.city %> for <%= @trip.user.name %></h1>
 <p>from <%= @trip.start_date %> to <%= @trip.end_date %></p>
+
+<% if @trip.trip_experiences %>
+  <% @trip.trip_experiences.each do |trip_exp| %>
+    <p>TODO: <%= Experience.find(trip_exp[:experience_id]).name %></p>
+  <% end %>
+<% end %>
+
+<p><%= link_to "See some suggestions?", my_experiences_path(@trip) %></p>
