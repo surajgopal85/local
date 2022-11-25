@@ -1,5 +1,4 @@
 .city-card {
-  /* background-color: aqua; */
   width: 150px;
   height: 150px;
   border-radius: 15px;
@@ -15,9 +14,12 @@
   border-bottom-right-radius: 0;
 }
 .city-card .city-card-info {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  text-align: center;
+  color: black;
+  opacity: .7;
+  // padding: 16px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
 }
