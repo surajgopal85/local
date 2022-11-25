@@ -1,0 +1,28 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createtripModal">
+  Add a trip
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="createtripModal" tabindex="-1" aria-labelledby="createtripModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createtripModalLabel">Create a new trip</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(trip) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :city%>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
