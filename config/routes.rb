@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :experiences
+  resources :experiences do
+    resources :messages, only: :create
+  end
   resources :experience_tags, only: %i[destroy]
 
   get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
@@ -22,4 +24,5 @@ Rails.application.routes.draw do
 
   # preferences routes
   resources :preferences, only: %i[create]
+
 end
