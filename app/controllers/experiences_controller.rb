@@ -31,7 +31,6 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience = Experience.find(params[:id])
-    @experience.local_id = current_user.id
     if @experience.destroy
       redirect_to local_experiences_path
     else
