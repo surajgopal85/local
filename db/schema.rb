@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_220039) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_191829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_220039) do
     t.bigint "local_id"
     t.string "name"
     t.index ["local_id"], name: "index_experiences_on_local_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "experience_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_messages_on_experience_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "preferences", force: :cascade do |t|
@@ -85,6 +95,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_220039) do
   add_foreign_key "experience_tags", "experiences"
   add_foreign_key "experience_tags", "tags"
   add_foreign_key "experiences", "users", column: "local_id"
+  add_foreign_key "messages", "experiences"
+  add_foreign_key "messages", "users"
   add_foreign_key "preferences", "tags"
   add_foreign_key "preferences", "users"
   add_foreign_key "trip_experiences", "experiences"

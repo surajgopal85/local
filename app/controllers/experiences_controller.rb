@@ -23,6 +23,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @message = Message.new
   end
 
   def edit
