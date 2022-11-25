@@ -1,12 +1,6 @@
-<h1>All Local Experiences</h1>
+  <h1>All Local Experiences</h1>
 
-<ul>
   <% @experiences.each do |experience| %>
-  <img src="<%= experience.image_url %>" alt="" style="height: 100px">
-  <li><%= experience.name %></li>
-  <li><%= experience.location %></li>
-  <li><%= experience.description %></li>
-  <li>Local: <%= experience.local.name %></li>
-  <%= link_to "View This Experience", experience_path(experience) %>
+      <%= render 'shared/experience_card', experience: experience %>
+      <%# <%= link_to "View This Experience", experience_path(experience) %>
   <% end %>
-</ul>
