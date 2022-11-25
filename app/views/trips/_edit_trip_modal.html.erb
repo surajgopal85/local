@@ -1,0 +1,27 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updatetripModal">
+  Change those dates
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="updatetripModal" tabindex="-1" aria-labelledby="updatetripModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updatetripModalLabel">Update your trip</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(trip) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
