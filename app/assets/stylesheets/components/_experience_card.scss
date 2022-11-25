@@ -1,0 +1,40 @@
+.experience-card {
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #F8BBD5;
+  overflow: hidden;
+  height: 140px;
+  width: 370px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.experience-card img {
+  width: 110px;
+  height: 140px;
+}
+
+.experience-card h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.experience-card p {
+  font-size: 10px;
+
+}
+
+.experience-card .experience-card-info {
+  padding: 10px;
+}
+
+.preference-card {
+  display: flex;
+}
+
+.card-positioning {
+  display: flex;
+  flex-direction: column;
+}
