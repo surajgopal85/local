@@ -257,8 +257,9 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
-  font-awesome-sass (~> 6.1)
+  
   geocoder
+  font-awesome-sass (~> 6.2.1)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
