@@ -7,6 +7,7 @@ class Experience < ApplicationRecord
 
   accepts_nested_attributes_for :experience_tags, allow_destroy: true
 
+  has_many :messages, dependent: :destroy
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 end

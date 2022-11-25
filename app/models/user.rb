@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :trips, dependent: :destroy
   has_many :preferences, dependent: :destroy
   has_many :tags, through: :preferences
+  has_many :messages, dependent: :destroy
 end
