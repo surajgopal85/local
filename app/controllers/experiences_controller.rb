@@ -25,6 +25,28 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
   end
 
+  def edit
+    @experience = Experience.find(params[:id])
+  end
+
+  def destroy
+    @experience = Experience.find(params[:id])
+    if @experience.destroy
+      redirect_to local_experiences_path
+    else
+      render :local_experiences, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @experience = Experience.find(params[:id])
+    if @experience.update(experience_params)
+      redirect_to local_experiences_path
+    else
+      render :show, status: :unprocessable_entity
+    end
+  end
+
   def my_experiences
     @trip = Trip.find(params[:trip_id])
     @user_tags = current_user.tags
