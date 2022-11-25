@@ -1,6 +1,7 @@
 <h1>trip to <%= @trip.city %> for <%= @trip.user.name %></h1>
 <p>from <%= @trip.start_date %> to <%= @trip.end_date %></p>
-
+<%= render "trips/edit_trip_modal", trip: @trip %>
+<br>
 <% if @trip.trip_experiences.size > 0 %>
   <% @trip.trip_experiences.each do |trip_exp| %>
     <p>TODO: <%= Experience.find(trip_exp[:experience_id]).name %></p>
