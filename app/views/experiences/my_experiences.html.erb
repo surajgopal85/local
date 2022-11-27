@@ -1,15 +1,12 @@
 <% if @selected_experiences.size.positive?  %>
   <h1>Here are some suggestions for you</h1>
   <h1>We found <%= @selected_experiences.size %> suggestions for you</h1>
-  <ul>
+
     <% @selected_experiences.each do |experience| %>
-      <img src="<%= experience.image_url %>" alt="" style="height: 100px">
-      <li><%= experience.name %></li>
-      <li><%= experience.location %></li>
-      <li>Local: <%= experience.local.name %></li>
+      <%= render 'shared/experience_card', experience: experience %>
       <%= link_to "View this suggestion", my_experience_path(@trip, experience) %>
     <% end %>
-  </ul>
+
 <% else %>
   <h1>Sorry, we didn't find any suggestion in <%= @trip.city %> according to your preferences.</h1>
 <% end %>
