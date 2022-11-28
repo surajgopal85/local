@@ -5,6 +5,8 @@ class Experience < ApplicationRecord
   has_many :trip_experiences, dependent: :destroy
   has_many :trips, through: :trip_experiences
 
+  has_many :reviews, dependent: :destroy
+
   accepts_nested_attributes_for :experience_tags, allow_destroy: true
 
   has_many :messages, dependent: :destroy

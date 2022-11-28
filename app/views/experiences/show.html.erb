@@ -36,4 +36,13 @@
   <% end %>
 </div>
 
-<%# add a message %>
+<div class="container">
+  <% if @experience.reviews.any? %>
+    <h3>Reviews of <%= @experience.name %></h3>
+    <% @experience.reviews.each do |review| %>
+      <h6>Review posted by <%= review.user.name %></h6>
+      <h6>Rating: <%= review.rating %></h6>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
