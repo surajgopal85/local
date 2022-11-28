@@ -1,10 +1,19 @@
 <% render 'shared/navbar' %>
 
 <div class="home-background">
-<%= cl_image_tag("local/new-logo-local_Small_ck67wa.jpg",
+  <%= cl_image_tag("local/new-logo-local_Small_ck67wa.jpg",
       width: 100, height: 100, crop: :fill) %>
   <h4>To Find Culture, Go Local</h4>
-  <a class="btn btn-ghost" href="#">Get Started</a>
+
+  <% if user_signed_in? %>
+    <% if current_user.preferences.size == 0 %>
+      <a class="btn btn-ghost" href="/survey">Tell us more about what you like</a>
+    <% else %>
+      <a class="btn btn-ghost" href="/profile">Get started, see your information!</a>
+    <% end %>
+  <% else %>
+    <a class="btn btn-ghost" href="#">Get Started</a>
+  <% end %>
 </div>
 
 <%# need a button, design in figma first %>

@@ -1,7 +1,5 @@
 <h1>Show Page - Welcome, <%= @user.name %>!</h1>
-<h3>Here is your information:</h3>
-<h4>Email: <%= @user.email %></h4>
-
+<h2>Your preferences   <%= link_to " 🖊 ", profile_edit_path %></h2>
 <% if !@user.preferences.nil? %>
   <% @user.preferences.each do |preference| %>
     <p><%= preference.tag.name %></p>
