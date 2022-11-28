@@ -9,6 +9,9 @@
   <br>
 </div>
 
+<%= render 'shared/local_user_card' %>
+
+
 <div class="container chatroom"
      data-controller="chatroom-subscription"
      data-chatroom-subscription-experience-id-value="<%= @experience.id %>">
@@ -25,7 +28,7 @@
 
     <%= f.input :content,
       label: false,
-      placeholder: "Message ##{@experience.name}",
+      placeholder: "Message ##{@experience.local.name}",
       wrapper_html: {class: "flex-grow-1"}
     %>
 
