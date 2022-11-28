@@ -1,0 +1,17 @@
+<div class="navbar-app">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "temp-logo.png" %>
+  <% end %>
+
+  <div class="user-nav">
+    <% if user_signed_in? %>
+
+      <%= render 'shared/avatar', user: current_user %>
+
+    <% else %>
+      <div class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>

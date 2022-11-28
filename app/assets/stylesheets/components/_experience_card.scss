@@ -1,4 +1,5 @@
 .experience-card {
+  color: black;
   border-radius: 15px;
   border: 1px solid;
   border-color: #F8BBD5;
@@ -8,7 +9,8 @@
   background: white;
   display: flex;
   align-items: center;
-  // margin-bottom: 20px;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .experience-card img {
