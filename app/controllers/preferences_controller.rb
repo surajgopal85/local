@@ -16,6 +16,5 @@ class PreferencesController < ApplicationController
   end
 
   def update
-
   end
 end
