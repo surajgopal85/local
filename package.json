@@ -8,6 +8,7 @@
     "@rails/actioncable": "^7.0.4",
     "bootstrap": "^5.2.3",
     "cocoon-js": "^0.0.5",
+    "flatpickr": "^4.6.13",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
   },
