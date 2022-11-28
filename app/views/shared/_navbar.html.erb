@@ -31,7 +31,7 @@
           <%# image from cloudinary primed %>
           <%# <%= cl_image_tag("https://res.cloudinary.com/dqxyjgr8m/image/upload/v1669648766/local/new-logo-local_Small_ck67wa.jpg",
       width: 100, height: 100, crop: :fill) %>
-            <%= cl_image_tag "local/new-logo-local_Small_ck67wa", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "new-logo-local-small", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
