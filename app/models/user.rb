@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_many :tags, through: :preferences
   has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  accepts_nested_attributes_for :preferences,
+                                reject_if: :all_blank,
+                                allow_destroy: true
 end
