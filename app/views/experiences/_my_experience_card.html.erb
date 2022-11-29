@@ -1,0 +1,16 @@
+<div class="container">
+  <%= link_to my_experience_path(trip, experience), class: "experience-card" do %>
+    <img src="<%= experience.image_url %>">
+    <div class="card-positioning">
+      <div class="experience-card-info">
+        <h2><%= experience.name %></h2>
+        <p><%= experience.description %></p>
+      </div>
+      <div class="preference-card">
+        <% experience.tags[0..2].each do |tag| %>
+          <%= render 'shared/preference_tag_card', tag: tag %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
