@@ -3,7 +3,7 @@
     <%# <i class="fa-light fa-pen-to-square"></i> %>
     <p>Edit</p>
   <% end %>
-  <%= link_to edit_experience_path(experience) do %>
+  <%= link_to experience_path(experience), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } do %>
     <%# <i class="fa-solid fa-trash-can-xmark"></i> %>
     <p>Delete</p>
   <% end %>
