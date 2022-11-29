@@ -1,1 +1,11 @@
 <h1>Update Your Profile</h1>
+<%= simple_form_for(current_user) do |f| %>
+  <hr>
+  <%= f.simple_fields_for :preferences do |preference| %>
+    <%= render 'preference_fields', f: preference %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'add preference', f, :preferences %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -14,4 +14,8 @@ class PreferencesController < ApplicationController
 
     redirect_to profile_path
   end
+
+  def update
+    raise
+  end
 end

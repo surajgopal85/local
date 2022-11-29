@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   # preferences routes
   resources :preferences, only: %i[create]
-
+  resources :users, only: %i[update]
 end
