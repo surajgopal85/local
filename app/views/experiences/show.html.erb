@@ -44,6 +44,10 @@
 </div>
 
 <div class="container">
+  <%= render "reviews/review_form", experience: @experience, review: @review %>
+</div>
+
+<div class="container">
   <% if @experience.reviews.any? %>
     <h3>Reviews of <%= @experience.name %></h3>
     <% @experience.reviews.each do |review| %>
