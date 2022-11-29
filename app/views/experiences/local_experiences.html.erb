@@ -2,5 +2,6 @@
 
 <h3>Your Experiences</h3>
   <% @experiences.each do |experience| %>
-      <%= render 'shared/experience_card', experience: experience %>
+    <%= render 'shared/experience_card', experience: experience %>
+    <%= render 'shared/edit_delete', experience: experience %>
   <% end %>
