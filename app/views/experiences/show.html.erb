@@ -54,6 +54,11 @@
       <h6>Review posted by <%= review.user.name %></h6>
       <h6>Rating: <%= review.rating %></h6>
       <p><%= review.content %></p>
+      <% if review.user.id == current_user.id %>
+        <%= link_to "Edit Your Review!", edit_review_path(review), class: "button" %>
+        <%= link_to "Delete Your Review!", review_path(review),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button" %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
