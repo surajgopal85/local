@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :messages, only: :create
-    resources :reviews, only: %i[new create show edit update destroy]
+    resources :reviews, only: %i[new create]
   end
+  resources :reviews, only: %i[edit update destroy]
   resources :experience_tags, only: %i[destroy]
 
   get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences

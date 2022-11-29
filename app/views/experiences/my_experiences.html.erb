@@ -2,8 +2,10 @@
   <h1>We found <%= @selected_experiences.size %> suggestions for you</h1>
 
     <% @selected_experiences.each do |experience| %>
+
       <%= render 'shared/experience_card', experience: experience %>
       <br>
+
     <% end %>
 
 <% else %>
