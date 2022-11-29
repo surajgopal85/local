@@ -1,13 +1,8 @@
   <h1>All Local Experiences</h1>
 
+  <%= render 'shared/map' %>
+
   <% @experiences.each do |experience| %>
       <%= render 'shared/experience_card', experience: experience %>
-      <%# <%= link_to "View This Experience", experience_path(experience) %>
+      <br>
   <% end %>
-
-</ul>
-<div style="width: 300px; height: 180px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>

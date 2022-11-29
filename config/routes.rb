@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :messages, only: :create
+    resources :reviews, only: %i[new create show edit update destroy]
   end
   resources :experience_tags, only: %i[destroy]
 
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
 
   # preferences routes
   resources :preferences, only: %i[create]
-
+  resources :users, only: %i[update]
 end

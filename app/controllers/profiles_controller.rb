@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
+    @trips = Trip.all.where(user_id: current_user.id)
     @trip = Trip.new
   end
 
@@ -21,6 +22,5 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-
   end
 end
