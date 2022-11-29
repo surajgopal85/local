@@ -15,13 +15,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @tags = Tag.all
-    # @preferences = Preference.where(user_id: current_user.id)
-    @preference = Preference.new
   end
 
   def update
-
   end
 
   def destroy
