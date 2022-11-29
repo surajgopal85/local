@@ -1,5 +1,7 @@
   <h1>All Local Experiences</h1>
 
+  <%= render 'shared/map' %>
+
   <% @experiences.each do |experience| %>
       <%= render 'shared/experience_card', experience: experience %>
   <% end %>
