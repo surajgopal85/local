@@ -16,7 +16,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # current_user.preferences.build unless current_user.preferences.any?
   end
 
   def update
