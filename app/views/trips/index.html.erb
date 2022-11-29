@@ -1,9 +1,1 @@
-<h1> Here are all your trips</h1>
-<ul>
-<% @trips.each do |trip| %>
-  <li><%= trip.city %></li>
-  <li><%= trip.start_date %></li>
-  <li><%= trip.end_date %></li>
-  <%= link_to "show details about that trip", trip_path(trip) %>
-<% end %>
-</ul>
+<%= render "list", trips: @trips %>
