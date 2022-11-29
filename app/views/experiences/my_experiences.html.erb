@@ -2,7 +2,8 @@
   <h1>We found <%= @selected_experiences.size %> suggestions for you</h1>
 
     <% @selected_experiences.each do |experience| %>
-      <%= render 'shared/experience_card', experience: experience %>
+      <%= render 'my_experience_card', trip: @trip, experience: experience %>
+
       <%= link_to "View this suggestion", my_experience_path(@trip, experience) %>
     <% end %>
 
