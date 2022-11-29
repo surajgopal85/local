@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: %i[edit update destroy]
   resources :experience_tags, only: %i[destroy]
+  resources :trip_experiences, only: %i[destroy]
 
   get 'trips/:trip_id/my_experiences', to: 'experiences#my_experiences', as: :my_experiences
   get 'trips/:trip_id/my_experiences/:id', to: 'experiences#my_experience', as: :my_experience
