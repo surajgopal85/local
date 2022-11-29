@@ -1,13 +1,15 @@
 <h1>trip to <%= @trip.city %> for <%= @trip.user.name %></h1>
-<p>from <%= @trip.start_date %> to <%= @trip.end_date %></p>
-<%= render "trips/edit_trip_modal", trip: @trip %>
+<div class="d-flex justify-content-evenly my-3">
+  <p>from <%= @trip.start_date %> <br> to <%= @trip.end_date %></p>
+  <%= render "trips/edit_trip_modal", trip: @trip %>
+</div>
 <br>
 <% if @trip.trip_experiences.size > 0 %>
   <% @trip.trip_experiences.each do |trip_exp| %>
     <p>TODO: <%= Experience.find(trip_exp[:experience_id]).name %></p>
   <% end %>
 <% end %>
-
-<p><%= link_to "See some suggestions?", my_experiences_path(@trip) %></p>
-<br>
-<p><%= link_to "Delete that trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' } %></p>
+<div class="d-flex justify-content-evenly my-3">
+  <button class="button"><%= link_to "See Suggestions", my_experiences_path(@trip) %></button>
+  <button class="button"><%= link_to "Delete Trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' } %></button>
+</div>

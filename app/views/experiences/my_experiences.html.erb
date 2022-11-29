@@ -3,10 +3,12 @@
 
     <% @selected_experiences.each do |experience| %>
       <%= render 'shared/experience_card', experience: experience %>
-      <%= link_to "View this suggestion", my_experience_path(@trip, experience) %>
+      <br>
     <% end %>
 
 <% else %>
   <h1>Sorry, we didn't find any suggestion in <%= @trip.city %> according to your preferences.</h1>
 <% end %>
-<p><%= link_to "I'm done with my trip", trip_path(@trip) %></p>
+<div class="d-flex justify-content-center">
+  <button class="button"><%= link_to "I'm done with my trip", trip_path(@trip) %></button>
+</div>
