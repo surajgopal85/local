@@ -4,10 +4,14 @@
 <br>
 <% if @trip.trip_experiences.size > 0 %>
   <% @trip.trip_experiences.each do |trip_exp| %>
-    <p>TODO: <%= Experience.find(trip_exp[:experience_id]).name %></p>
+
+    <%# <h3>TODO: <%= Experience.find(trip_exp[:experience_id]).name %>
+    <h3>TODO: <%= trip_exp.experience.name %></h3>
+    <%= link_to "🗑️", trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' }, class: "button"  %>
+
   <% end %>
 <% end %>
-
-<p><%= link_to "See some suggestions?", my_experiences_path(@trip) %></p>
 <br>
-<p><%= link_to "Delete that trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' } %></p>
+<p><%= link_to "See some suggestions?", my_experiences_path(@trip), class: "button" %></p>
+<br>
+<p><%= link_to "Delete that trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' }, class: "button" %></p>

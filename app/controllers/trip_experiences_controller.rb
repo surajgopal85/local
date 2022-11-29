@@ -12,4 +12,10 @@ class TripExperiencesController < ApplicationController
       render 'trips/show', status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @trip_experience = TripExperience.find(params[:id])
+    @trip_experience.destroy
+    redirect_to trip_path(@trip)
+  end
 end
