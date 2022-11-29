@@ -20,10 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    raise
   end
 
   def destroy
-
   end
 end
