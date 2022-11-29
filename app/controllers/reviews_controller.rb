@@ -12,6 +12,25 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+
+    if @review.update(review_params)
+      redirect_to experience_path(@review.experience)
+    else
+      render '/experiences/show', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+  end
+
   private
 
   def review_params
