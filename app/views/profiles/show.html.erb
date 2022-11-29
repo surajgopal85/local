@@ -1,23 +1,32 @@
-<div class="show-container">
+<style>
+  a {
+    text-decoration: none;
+  }
 
+  .trip-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+</style>
 <h2>Show Page - Welcome, <%= @user.name %>!</h2>
-<h2>Your preferences   <%= link_to " 🖊 ", profile_edit_path %></h2>
-<div>
+<div class="d-flex justify-content-evenly my-3">
+<h2>Your preferences<%= link_to " 🖊 ", profile_edit_path %></h2>
+</div>
+
   <% if !@user.preferences.nil? %>
     <% @user.preferences.each do |preference| %>
       <p><%= preference.tag.name %></p>
     <% end %>
   <% end %>
-</div>
-<div class="show-container">
+
+<div class="d-flex justify-content-evenly my-3">
   <h3>My Trips</h3>
-
-  <%= render "trips/new_trip_modal", trip: @trip %>
-<%= link_to "edit your profile", profile_edit_path %>
-
-<%= render "trips/list", trips: @trips %>
-
 </div>
-<%= render "shared/city_card" %>
-<%= render "shared/city_card" %>
-<%= render "shared/city_card" %>
+<div class="d-flex justify-content-evenly my-3">
+  <%= render "trips/new_trip_modal", trip: @trip %>
+</div>
+<div class="trip-cards">
+  <%= render "trips/list", trips: @trips %>
+</div>
