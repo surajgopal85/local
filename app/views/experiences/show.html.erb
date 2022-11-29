@@ -3,10 +3,12 @@
   <h1><%= @experience.name %></h1>
 </div>
 
-
-  <p class="experience-location"><i class="fa-light fa-location-dot"></i><%= @experience.location %></p>
+  <br>
+  <p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= @experience.location %></strong></p>
+  <br>
   <p><%= @experience.description %></p>
-  <p><%= @experience.local.name %></p>
+
+  <br>
 
   <div class="experience-tag">
     <%= render "shared/preference_tag" %>
