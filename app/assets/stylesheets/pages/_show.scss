@@ -1,0 +1,20 @@
+.show-container{
+  h3{
+    text-align: center;
+  }
+}
+
+.trip-card{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 70px;
+  margin-top: 30px;
+  border-radius: 15;
+  box-shadow: blue, 10px;
+}
+
+.trip-label{
+
+display: flex;
+}
