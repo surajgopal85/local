@@ -1,15 +1,27 @@
+<div class="show-container">
+  <h3>My preferences</h3>
+  <% if !@user.preferences.nil? %>
+    <div class="preference-card">
+      <% @user.tags.each do |tag| %>
+        <%= render 'shared/preference_tag_card', tag: tag %>
+      <% end %>
+    </div>
 <h1>Show Page - Welcome, <%= @user.name %>!</h1>
-<h3>Here is your information:</h3>
-<h4>Email: <%= @user.email %></h4>
-
+<h2>Your preferences   <%= link_to " 🖊 ", profile_edit_path %></h2>
 <% if !@user.preferences.nil? %>
   <% @user.preferences.each do |preference| %>
     <p><%= preference.tag.name %></p>
   <% end %>
-<% end %>
+</div>
+<div class="show-container">
+  <h3>My Trips</h3>
 
+  <%= render "trips/new_trip_modal", trip: @trip %>
 <%= link_to "edit your profile", profile_edit_path %>
 
 <%= render "trips/list", trips: @trips %>
 
-<%= render "trips/new_trip_modal", trip: @trip %>
+</div>
+<%= render "shared/city_card" %>
+<%= render "shared/city_card" %>
+<%= render "shared/city_card" %>

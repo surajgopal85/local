@@ -1,21 +1,28 @@
 
-<div class="container" style="background-image: url(<%= @experience.image_url %>)">
+<div class="container experience-title" style="background-image: url(<%= @experience.image_url %>)">
   <h1><%= @experience.name %></h1>
-  <h3><%= @experience.location %></h3>
-  <p><%= @experience.description %></p>
-  <p><%= @experience.local.name %></p>
-  <br>
-  <br>
-  <br>
 </div>
 
-<%= render 'shared/local_user_card' %>
+  <br>
+  <p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= @experience.location %></strong></p>
+  <br>
+  <p><%= @experience.description %></p>
+
+  <br>
+
+  <div class="experience-tag">
+    <%= render "shared/preference_tag" %>
+    <%= render "shared/preference_tag" %>
+  </div>
+    <%= render 'shared/local_user_card' %>
+
+
 
 
 <div class="container chatroom"
      data-controller="chatroom-subscription"
      data-chatroom-subscription-experience-id-value="<%= @experience.id %>">
-  <h1>#<%= @experience.name %></h1>
+  <h6>#<%= @experience.name %></h6>
   <%# display your messages %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @experience.messages.each do |message| %>
