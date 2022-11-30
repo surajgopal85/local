@@ -6,6 +6,10 @@
     border-color: #F8BBD5;
     margin-top: 25px;
   }
+
+  i {
+    color: #FED3A0
+  }
 </style>
 
 <div class="container">
@@ -19,7 +23,10 @@
     <% experience.reviews.each do |rev| %>
       <div class="review-border">
         <h6>Review posted by <%= rev.user.name %></h6>
-        <h6>Rating: <%= rev.rating %></h6>
+        <h6>Rating: <% rev.rating.times do |star| %>
+          <i class="fa-solid fa-star"></i>
+          <% end %>
+        </h6>
         <p><%= rev.content %></p>
       </div>
       <% if rev.user.id == current_user.id %>
