@@ -1,4 +1,10 @@
-<div class="container experience-title" style="background-image: url(<%= experience.image_url %>)">
+<div class="container experience-title" style="background-image: url(
+  <% if experience.image_url == "" %>
+    <%= "https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg"%>
+  <% else %>
+    <%= experience.image_url %>
+  <% end %>
+  )">
   <h1><%= experience.name %></h1>
 </div>
 <br>

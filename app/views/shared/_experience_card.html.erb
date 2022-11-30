@@ -1,6 +1,10 @@
 <div class="container">
   <%= link_to experience_path(experience), class: "experience-card" do %>
-    <img src="<%= experience.image_url %>">
+    <% if experience.image_url == "" %>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg">
+    <% else %>
+      <img src="<%= experience.image_url %>">
+    <% end %>
     <div class="card-positioning">
       <div class="experience-card-info">
         <h2><%= experience.name %></h2>
