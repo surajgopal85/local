@@ -10,9 +10,16 @@
     <p>CREATE</p>
   <% end %>
 
-  <%= link_to local_experiences_path do %>
-    <i class="fa-solid fa-compass"></i>
-    <p>MY EXPERIENCES</p>
+  <% if user_signed_in? %>
+    <%= link_to local_experiences_path do %>
+      <i class="fa-solid fa-compass"></i>
+      <p>MY EXPERIENCES</p>
+    <% end %>
+  <% else %>
+    <%= link_to experiences_path do %>
+      <i class="fa-solid fa-compass"></i>
+      <p>ALL EXPERIENCES</p>
+    <% end %>
   <% end %>
 
 </div>
