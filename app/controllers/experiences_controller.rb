@@ -68,7 +68,7 @@ class ExperiencesController < ApplicationController
         @selected_experiences.push(experience) if @user_tags.include?(tag)
       end
     end
-    @selected_experiences
+    @selected_experiences = @selected_experiences.uniq{ |exp| exp.id}
   end
 
   def my_experience
