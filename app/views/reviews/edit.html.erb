@@ -1,7 +1,20 @@
+<style>
+  .outline {
+    border: 1px solid;
+    border-color: #F8BBD5;
+    border-radius: 15px;
+    padding: 25px;
+  }
+</style>
+
 <div class="container">
-  <%= simple_form_for(@review) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: 1..5 %>
-    <%= f.submit "Update Your Review"  %>
-  <% end %>
+  <div class="outline">
+    <%= simple_form_for(@review) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 1..5 %>
+      <div class="d-flex justify-content-center my-3">
+        <%= f.submit "Update Your Review"  %>
+      </div>
+    <% end %>
+  </div>
 </div>

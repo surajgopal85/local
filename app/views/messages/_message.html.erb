@@ -1,7 +1,19 @@
+<style>
+  .message-content {
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid;
+    border-color: #E7D2E7;
+  }
+</style>
+
 <div id="message-<%= message.id %>">
-  <small>
+  <p>
     <strong><%= message.user.name %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= message.content %></p>
+  </p>
+  <div class="message-content">
+    <p><%= message.content %></p>
+  </div>
+  <br>
 </div>
