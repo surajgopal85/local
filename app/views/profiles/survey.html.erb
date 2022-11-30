@@ -1,4 +1,5 @@
-<h1>Select all your preferences</h1>
+<h1>What do you love to do on vacation?</h1>
+<p>Choose your favorite travel preferences:</p>
 
 <br>
 <br>
@@ -6,5 +7,5 @@
 <%# we want to create a new preference for each tag chosen by a new user %>
 <%= simple_form_for(@preference) do |f| %>
     <%= f.association :tag, :as => :check_boxes  %>
-    <%= f.submit 'Submit Your Preferences!', class: 'btn btn-secondary' %>
+    <%= f.submit 'Save Your Preferences!', class: 'btn btn-secondary' %>
 <% end %>
