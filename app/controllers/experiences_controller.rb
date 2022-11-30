@@ -68,12 +68,14 @@ class ExperiencesController < ApplicationController
         @selected_experiences.push(experience) if @user_tags.include?(tag)
       end
     end
-    @selected_experiences
+    @selected_experiences = @selected_experiences.uniq{ |exp| exp.id}
   end
 
   def my_experience
     @trip = Trip.find(params[:trip_id])
     @experience = Experience.find(params[:id])
+    @message = Message.new
+    @review = Review.new
   end
 
   def local_experiences
