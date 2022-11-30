@@ -7,7 +7,10 @@
     margin-top: 25px;
   }
 
-  i {
+  .star-box {
+    display: flex;
+  }
+  .star {
     color: #FED3A0
   }
 </style>
@@ -24,8 +27,10 @@
       <div class="review-border">
         <h6>Review posted by <%= rev.user.name %></h6>
         <h6>Rating: <% rev.rating.times do |star| %>
-          <i class="fa-solid fa-star"></i>
+        <div class="star-box">
+          <p class="star"><i class="fa-solid fa-star"></i></p>
           <% end %>
+        </div>
         </h6>
         <p><%= rev.content %></p>
       </div>
