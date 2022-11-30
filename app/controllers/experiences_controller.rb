@@ -74,6 +74,8 @@ class ExperiencesController < ApplicationController
   def my_experience
     @trip = Trip.find(params[:trip_id])
     @experience = Experience.find(params[:id])
+    @message = Message.new
+    @review = Review.new
   end
 
   def local_experiences

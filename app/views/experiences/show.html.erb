@@ -1,64 +1,12 @@
+<%# test %>
+<%= render 'experience_content', experience: @experience %>
+<br>
+<%# test %>
 
-<div class="container experience-title" style="background-image: url(<%= @experience.image_url %>)">
-  <h1><%= @experience.name %></h1>
-</div>
+<%# test to add the chatroom code in a partial %>
+<%= render 'chatroom_content', experience: @experience, message: @message %>
+<%# test to add the chatroom code in a partial %>
 
-  <br>
-  <p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= @experience.location %></strong></p>
-  <br>
-  <p><%= @experience.description %></p>
-
-  <br>
-
-  <div class="experience-tag">
-    <%= render "shared/preference_tag" %>
-    <%= render "shared/preference_tag" %>
-  </div>
-    <%= render 'shared/local_user_card' %>
-
-
-
-
-<div class="container chatroom"
-     data-controller="chatroom-subscription"
-     data-chatroom-subscription-experience-id-value="<%= @experience.id %>">
-  <h6>#<%= @experience.name %></h6>
-  <%# display your messages %>
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @experience.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
-
-  <%= simple_form_for [@experience, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f| %>
-
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@experience.local.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
-</div>
-
-<div class="container">
-  <%= render "reviews/review_form", experience: @experience, review: @review %>
-</div>
-
-<div class="container">
-  <% if @experience.reviews.any? %>
-    <h3>Reviews of <%= @experience.name %></h3>
-    <% @experience.reviews.each do |review| %>
-      <h6>Review posted by <%= review.user.name %></h6>
-      <h6>Rating: <%= review.rating %></h6>
-      <p><%= review.content %></p>
-      <% if review.user.id == current_user.id %>
-        <%= link_to "Edit Your Review!", edit_review_path(review), class: "button" %>
-        <%= link_to "Delete Your Review!", review_path(review),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button" %>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
+<%# test to add the reviews code in a partial %>
+<%= render 'review_content', experience: @experience, review: @review %>
+<%# test to add the reviews code in a partial %>
