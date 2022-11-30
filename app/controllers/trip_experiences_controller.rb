@@ -15,6 +15,7 @@ class TripExperiencesController < ApplicationController
 
   def destroy
     @trip_experience = TripExperience.find(params[:id])
+    @trip = @trip_experience.trip
     @trip_experience.destroy
     redirect_to trip_path(@trip)
   end

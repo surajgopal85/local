@@ -28,7 +28,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
+    @experience = @review.experience
     @review.destroy
+    redirect_to experience_path(@experience)
   end
 
   private
