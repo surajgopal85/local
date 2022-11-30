@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/survey', to: 'profiles#survey', as: :survey
   post '/profile', to: 'profiles#create'
-  get '/profile', to: 'profiles#show'
+  get '/profile', to: 'profiles#show', as: :profile_content
   get '/profile/edit', to: 'profiles#edit'
   patch '/profile', to: 'profiles#update'
   delete '/profile', to: 'profiles#destroy'
