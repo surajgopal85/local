@@ -8,7 +8,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updatetripModalLabel">Update your trip</h5>
+        <h5 class="modal-title" id="updatetripModalLabel">Change Your Dates</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -18,7 +18,9 @@
             <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit %>
+            <div class="d-flex justify-content-center">
+              <button class="button"><%= f.button :submit %></button>
+            </div>
           </div>
         <% end %>
       </div>
