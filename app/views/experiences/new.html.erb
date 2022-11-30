@@ -6,11 +6,15 @@
     <%= f.input :image_url %>
     <hr>
     <%= f.simple_fields_for :experience_tags do |experience_tag| %>
-      <%= render 'experience_tag_fields', f: experience_tag %>
+      <br>
+        <%= render 'experience_tag_fields', f: experience_tag %>
+      <br>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add experience tag', f, :experience_tags %>
+      <button class="button"><%= link_to_add_association 'Add Tag', f, :experience_tags %></button>
     </div>
-    <%= f.submit %>
+    <div class="d-flex justify-content-center my-3">
+      <%= f.submit %>
+    </div>
   <% end %>
 </div>
