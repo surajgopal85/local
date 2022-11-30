@@ -13,3 +13,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// for grounding the footer
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  flex-grow: 1;
+  overflow-y: scroll;
+}
