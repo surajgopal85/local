@@ -1,0 +1,14 @@
+<div class="container experience-title" style="background-image: url(<%= experience.image_url %>)">
+  <h1><%= experience.name %></h1>
+</div>
+<br>
+<p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= experience.location %></strong></p>
+<br>
+<p><%= experience.description %></p>
+<br>
+<div class="experience-tag">
+  <% experience.tags.each do |tag| %>
+    <%= render "shared/preference_tag", tag: tag %>
+  <% end %>
+</div>
+<%= render 'shared/local_user_card' %>
