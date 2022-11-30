@@ -5,6 +5,7 @@
     <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
@@ -28,7 +29,7 @@
     <%= render "shared/top_bar" %>
     <%= render "shared/flashes" %>
 
-    <div class="mx-1" >
+    <div class="<%= current_page?(root_path) ? "" : "mx-1" %>">
       <%= yield %>
     </div>
     <%= render "shared/navbar_bottom"%>
