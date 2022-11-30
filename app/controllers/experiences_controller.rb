@@ -64,11 +64,14 @@ class ExperiencesController < ApplicationController
 
     @selected_experiences = []
     @experiences.select do |experience|
+      match = 0
       experience.tags.each do |tag|
-        @selected_experiences.push(experience) if @user_tags.include?(tag)
+        match += 1 if @user_tags.include?(tag)
       end
+      @selected_experiences.push([experience, match]) if match.positive?
     end
-    @selected_experiences = @selected_experiences.uniq{ |exp| exp.id}
+    @selected_experiences.uniq!{ |exp| exp[0].id}
+    @selected_experiences = @selected_experiences.sort_by { |x| x[1] }.reverse.map(&:first)
   end
 
   def my_experience
