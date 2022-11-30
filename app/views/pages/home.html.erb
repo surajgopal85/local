@@ -1,9 +1,9 @@
 <% render 'shared/navbar' %>
 
 <div class="home-background">
-  <%= image_tag "new-logo-local-small.jpg", style: "width: 80px; height: 80px" %>
+  <%= image_tag "png-logo-square@2040x.png", style: "width: 80px; height: 80px", class: "new-logo-local" %>
   <h4>To Find Culture, Go Local</h4>
-  
+
   <% if user_signed_in? %>
     <% if current_user.preferences.size == 0 %>
       <%= link_to "Get Started", survey_path, class: "btn btn-ghost" %>
