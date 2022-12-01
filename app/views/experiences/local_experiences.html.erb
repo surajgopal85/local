@@ -1,6 +1,7 @@
-<h1>Hello, <%= @user.name %>!</h1>
+<h1 class="text-center">Hello, <%= @user.name %>!</h1>
 
-<h3>Your Experiences</h3>
+<h3 class="text-center">Your Experiences:</h3>
+<br>
   <% @experiences.each do |experience| %>
     <%= render 'shared/experience_card', experience: experience %>
     <%= render 'shared/edit_delete', experience: experience %>

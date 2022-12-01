@@ -1,20 +1,26 @@
-<div class="container experience-title" style="background-image: url(
-  <% if experience.image_url == "" %>
-    <%= "https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg"%>
-  <% else %>
-    <%= experience.image_url %>
-  <% end %>
-  )">
-  <h1><%= experience.name %></h1>
+<div class="mx-2">
+  <div class="container experience-title" style="background-image: url(
+    <% if experience.image_url == "" %>
+      <%= "https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg"%>
+    <% else %>
+      <%= experience.image_url %>
+    <% end %>
+    )">
+    <h2><%= experience.name %></h2>
+    <div class="image-gradient">
+    </div>
+  </div>
+  <div class="mx-4">
+    <br>
+    <p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= experience.location %></strong></p>
+    <br>
+    <p><%= experience.description %></p>
+    <br>
+  </div>
+    <div class="experience-tag">
+      <% experience.tags.each do |tag| %>
+        <%= render "shared/preference_tag", tag: tag %>
+      <% end %>
+    </div>
+    <%= render 'shared/local_user_card' %>
 </div>
-<br>
-<p class="experience-location"><i class="fa-solid fa-location-dot"></i><strong> <%= experience.location %></strong></p>
-<br>
-<p><%= experience.description %></p>
-<br>
-<div class="experience-tag">
-  <% experience.tags.each do |tag| %>
-    <%= render "shared/preference_tag", tag: tag %>
-  <% end %>
-</div>
-<%= render 'shared/local_user_card' %>
