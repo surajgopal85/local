@@ -132,10 +132,10 @@ e10 = Experience.create!(name: "Discover a whole world under the city at the 14t
                          local_id: user1.id)
 e10.tags = [tag8, tag9]
 puts "experience: #{e10.name}, local: #{e10.local.name} "
-reviewUndergroundsculpture1 = Review.new(rating: rand(1..5),
-                                         content: "Loved it, we never look around usually.",
-                                         experience_id: e10.id)
-
+reviewUndergroundsculpture1 = Review.create!(rating: rand(1..5),
+                                             content: "Loved it, we never look around usually.",
+                                             experience_id: e10.id)
+puts " reviewUndergroundsculpture1 created"
 
 e11 = Experience.create!(name: "Dance all night at House of Yes ",
                          image_url: "https://img.theculturetrip.com/wp-content/uploads/2019/06/unicornicopia_112517_kr_-7860.jpg",
@@ -145,10 +145,10 @@ e11 = Experience.create!(name: "Dance all night at House of Yes ",
                          local_id: user1.id)
 e11.tags = [tag6, tag8, tag12]
 puts "experience: #{e11.name}, local: #{e11.local.name} "
-reviewHouseofyes1 = Review.new(rating: rand(1..5),
-                              content: "Best club I’ve ever been to. Highly recommend buying tickets to performance. As long as you stay, they let you stick around for the dance party the rest of the evening.",
-                              experience_id: e11.id)
-
+reviewHouseofyes1 = Review.create!(rating: rand(1..5),
+                                   content: "Best club I’ve ever been to. Highly recommend buying tickets to performance. As long as you stay, they let you stick around for the dance party the rest of the evening.",
+                                   experience_id: e11.id)
+puts " reviewHouseofyes1 created"
 
 e12 = Experience.create!(name: "Street art in the city at the Welling Court Mural Project",
                          image_url: "https://altinnov.blog/wp-content/uploads/2019/11/Couverture-Wellingcourt-Mural.jpg",
@@ -157,10 +157,10 @@ e12 = Experience.create!(name: "Street art in the city at the Welling Court Mura
                          local_id: user1.id)
 e12.tags = [tag9, tag10, tag11]
 puts "experience: #{e12.name}, local: #{e12.local.name} "
-reviewStreetArt1 = Review.new(rating: rand(1..5),
-                              content: "Cool pieces.it’d be great for the area to be cleaner. Also, not sure if it was just me but I didn’t see as much as I thought I was going to see.",
-                              experience_id: e12.id)
-
+reviewStreetArt1 = Review.create!(rating: rand(1..5),
+                                  content: "Cool pieces.it’d be great for the area to be cleaner. Also, not sure if it was just me but I didn’t see as much as I thought I was going to see.",
+                                  experience_id: e12.id)
+puts " reviewStreetArt1 created"
 
 e13 = Experience.create!(name: "The Louvre, you can't miss it...",
                          image_url: "https://www.cap-voyage.com/wp-content/uploads/2019/12/paris-louvre.jpg",
@@ -169,9 +169,11 @@ e13 = Experience.create!(name: "The Louvre, you can't miss it...",
                          local_id: user2.id)
 e13.tags = [tag7, tag9, tag10]
 puts "experience: #{e13.name}, local: #{e13.local.name} "
-reviewLouvre1 = Review.new(rating: rand(1..5),
-                           content: "Amazing collection that can be appreciated by even folks who aren’t art connoisseurs! Plan to spend about 3 hrs and pick a handful of things you want to see ahead of time to help map out your visit.",
-                           experience_id: e13.id)
+reviewLouvre1 = Review.create!(rating: rand(1..5),
+                               content: "Amazing collection that can be appreciated by even folks who aren’t art connoisseurs! Plan to spend about 3 hrs and pick a handful of things you want to see ahead of time to help map out your visit.",
+                               experience_id: e13.id)
+puts " reviewLouvre1 created"
+
 
 e14 = Experience.create!(name: "Pere Lachaise Cemetery",
                          image_url: "https://www.parisenigmes.com/PICTURE/PERE_LACHAISE/frederic-chopin-tombe.webp",
@@ -181,9 +183,10 @@ e14 = Experience.create!(name: "Pere Lachaise Cemetery",
                          local_id: user2.id)
 e14.tags = [tag5, tag10, tag11]
 puts "experience: #{e14.name}, local: #{e14.local.name} "
-reviewPerelachaise1 = Review.new(rating: rand(1..5),
-                                 content: "Very big, the guided tour is cool, we learn a lot of anecdotes about people resting there.",
-                                 experience_id: e14.id)
+reviewPerelachaise1 = Review.create!(rating: rand(1..5),
+                                     content: "Very big, the guided tour is cool, we learn a lot of anecdotes about people resting there.",
+                                     experience_id: e14.id)
+puts " reviewPerelachaise1 created"
 
 e15 = Experience.create!(name: "Le Scilicet",
                          image_url: "https://cdn.sortiraparis.com/images/80/88174/490087-bar-le-scilicet-les-photos.jpg",
@@ -193,9 +196,10 @@ e15 = Experience.create!(name: "Le Scilicet",
                          local_id: user2.id)
 e15.tags = [tag2, tag6, tag10]
 puts "experience: #{e15.name}, local: #{e15.local.name} "
-reviewScilicet1 = Review.new(rating: rand(1..5),
-                             content: "Good place to have a drink, but next time I won't order food: too expensive and don't worth it.",
-                             experience_id: e15.id)
+reviewScilicet1 = Review.create!(rating: rand(1..5),
+                                 content: "Good place to have a drink, but next time I won't order food: too expensive and don't worth it.",
+                                 experience_id: e15.id)
+puts " reviewScilicet1 created"
 
 e16 = Experience.create!(name: "Sagrada Familia",
                          image_url: "https://cdn.futura-sciences.com/sources/images/Sagrada-Familia-Barcelone.jpg",
@@ -206,9 +210,10 @@ e16 = Experience.create!(name: "Sagrada Familia",
                          local_id: user3.id)
 e16.tags = [tag9, tag10, tag11]
 puts "experience: #{e16.name}, local: #{e16.local.name} "
-reviewSagradafamilia1 = Review.new(rating: rand(1..5),
-                                   content: "Absolutely worth a visit!",
-                                   experience_id: e16.id)
+reviewSagradafamilia1 = Review.create!(rating: rand(1..5),
+                                       content: "Absolutely worth a visit!",
+                                       experience_id: e16.id)
+puts " reviewSagradafamilia1 created"
 
 
 e17 = Experience.create!(name: "Visit Picasso Museum",
@@ -219,9 +224,10 @@ e17 = Experience.create!(name: "Visit Picasso Museum",
                          local_id: user3.id)
 e17.tags = [tag8, tag9, tag10]
 puts "experience: #{e17.name}, local: #{e17.local.name} "
-reviewPicassoMuseum1 = Review.new(rating: rand(1..5),
-                                  content: "Interesting, learned a lot about hte artist.",
-                                  experience_id: e17.id)
+reviewPicassoMuseum1 = Review.create!(rating: rand(1..5),
+                                      content: "Interesting, learned a lot about hte artist.",
+                                      experience_id: e17.id)
+puts " reviewPicassoMuseum1 created"
 
 
 e18 = Experience.create!(name: "Montserrat natural park",
@@ -231,9 +237,10 @@ e18 = Experience.create!(name: "Montserrat natural park",
                          local_id: user3.id)
 e18.tags = [tag1, tag3, tag11]
 puts "experience: #{e18.name}, local: #{e18.local.name} "
-reviewMonserratPark1 = Review.new(rating: rand(1..5),
-                                  content: "You need to plan a one-day-trip to go there, but it great.",
-                                  experience_id: e18.id)
+reviewMonserratPark1 = Review.create!(rating: rand(1..5),
+                                      content: "You need to plan a one-day-trip to go there, but it great.",
+                                      experience_id: e18.id)
+puts " reviewMonserratPark1 created"
 
 
 e19 = Experience.create!(name: "Moog NightClub",
@@ -243,9 +250,10 @@ e19 = Experience.create!(name: "Moog NightClub",
                          local_id: user3.id)
 e19.tags = [tag8, tag6, tag12]
 puts "experience: #{e19.name}, local: #{e19.local.name} "
-reviewMoog1 = Review.new(rating: rand(1..5),
-                         content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
-                         experience_id: e19.id)
+reviewMoog1 = Review.create!(rating: rand(1..5),
+                             content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
+                             experience_id: e19.id)
+puts " reviewMoog1 created"
 
 # seed trips
 t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022, 12, 4), user_id: user1.id)
