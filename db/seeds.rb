@@ -130,6 +130,7 @@ e9 = Experience.create!(name: "Take the seabus to save time in transporation and
                         location: "Vancouver, Canada",
                         description: "There is a lot of traffic jams around Vancouver and mostly on its 2 bridges.
                         The seabus is a very good way to get rid of them and offers you a very beautiful view over the city or mountains from the sea. The crossing takes only 15 min!",
+                        address: "123 Carrie Cates Ct, North Vancouver, Canada",
                         local_id: user4.id)
 e9.tags = [tag10]
 puts "experience: #{e9.name}, local: #{e9.local.name} "
