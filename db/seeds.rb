@@ -277,14 +277,6 @@ reviewMoog1 = Review.create!(rating: rand(1..5),
                              user_id: user1.id)
 puts " reviewMoog1 created"
 
-e20 = Experience.create!(name: "Mamoun's Falafel",
-  image_url: "https://www.nycgo.com/images/venues/3134/mamoun_alexlopez_q8h0634__large.jpg",
-  location: "New York",
-  description: " Falafel sandwiches are a must — $5, and incredible. Stay away from the hot sauce,   though, it’ll kill ya!",
-  address: "119 MacDougal St, New York, NY 10012",
-  local_id: user1.id)
-e20.tags = [tag2, tag12]
-
 # seed trips
 t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022, 12, 4), user_id: user1.id)
 t2 = Trip.create!(city: "New York", start_date: Date.new(2022, 12, 10), end_date: Date.new(2022, 12, 12), user_id: user3.id)
