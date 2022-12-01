@@ -100,6 +100,6 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:name, :location, :description, :image_url, experience_tags_attributes: [:id, :tag_id, :_destroy])
+    params.require(:experience).permit(:name, :location, :description, :image_url, :address, experience_tags_attributes: [:id, :tag_id, :_destroy])
   end
 end

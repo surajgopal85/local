@@ -91,6 +91,7 @@ e5 = Experience.create!(name: "Local products in the 'End-of-the-line' general s
                         image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0f/90/8c/be/the-end-of-the-line-local.jpg",
                         location: "Vancouver, Canada",
                         description: "Just around the corner when you leave the Baden Powell hicking trail, you are always welcome there. You can sit and have a coffe and home made goodies, or find some local products to taste.",
+                        address: "4193 Lynn Valley Rd, North Vancouver, BC V7K 2T2, Canada",
                         local_id: user4.id)
 e5.tags = [tag2, tag10]
 
@@ -98,6 +99,7 @@ e6 = Experience.create!(name: "Ski at night and admire the view over the city fr
                         image_url: "https://www.vancouverplanner.com/wp-content/uploads/2020/04/grouse-mountain-2.jpeg",
                         location: "Vancouver, Canada",
                         description: "A must to do, come and ski at night on Grouse Mountain and admire the view over the city from the top of the slopes! It's open till 10pm.",
+                        address: "6400 Nancy Greene Way North Vancouver, BC V7R 4K9",
                         local_id: user4.id)
 e6.tags = [tag4, tag5, tag11]
 puts "experience: #{e6.name}, local: #{e6.local.name} "
@@ -106,6 +108,7 @@ e7 = Experience.create!(name: "Museum of anthropology",
                         image_url: "https://moa.ubc.ca/wp-content/uploads/2018/03/MOA_140611_0078-2.jpg",
                         location: "Vancouver, Canada",
                         description: "Superb place of world arts and cultures with a special emphasis on the First Nations people, on the campus of UBC. Fantastic!",
+                        address: "6393 NW Marine Dr, Vancouver, BC V6T 1Z2, Canada",
                         local_id: user4.id)
 e7.tags = [tag7, tag9, tag8, tag10]
 puts "experience: #{e7.name}, local: #{e7.local.name} "
@@ -117,6 +120,7 @@ e8 = Experience.create!(name: "Miku japanese restaurant on Canada Place",
                         The food is very good, its location allows you to enjoy the view over Canada Place.
                         Make sure to book that restaurant long in advance.
                         Quite expensive, but very good for a special occasion.",
+                        address: "200 Granville St #70, Vancouver, BC V6C 1S4, Canada",
                         local_id: user4.id)
 e8.tags = [tag2, tag10]
 puts "experience: #{e8.name}, local: #{e8.local.name} "
@@ -135,6 +139,7 @@ e10 = Experience.create!(name: "Discover a whole world under the city at the 14t
                          location: "New York, NY, USA",
                          description: "The Life Underground sculpture series by Tom Otterness is one of the most delightful sights on the subway and has been entertaining commuters since 2001.
                          Try to spot spot all 130 statues hidden there!",
+                         address: "300 W 14th St, New York, NY 10014",
                          local_id: user1.id)
 e10.tags = [tag8, tag9]
 puts "experience: #{e10.name}, local: #{e10.local.name} "
@@ -154,6 +159,7 @@ e12 = Experience.create!(name: "Street art in the city at the Welling Court Mura
                          image_url: "https://altinnov.blog/wp-content/uploads/2019/11/Couverture-Wellingcourt-Mural.jpg",
                          location: "New York, NY, USA",
                          description: "It shows the work from 150 mural artists from around the world and really shows off the creativity of the city. Free!",
+                         address: "11-98 Welling Ct, Queens, NY 11102",
                          local_id: user1.id)
 e12.tags = [tag9, tag10, tag11]
 puts "experience: #{e12.name}, local: #{e12.local.name} "
@@ -167,6 +173,7 @@ e13 = Experience.create!(name: "The Louvre, you can't miss it...",
                          image_url: "https://www.cap-voyage.com/wp-content/uploads/2019/12/paris-louvre.jpg",
                          location: "Paris, France",
                          description: "No need for a description here! One trick: The Louvre is a very busy place. To avoid the crowd, book your ticket online for a wednesday or friday evening!",
+                         address: "99 Rue de Rivoli, 75001 Paris, France",
                          local_id: user2.id)
 e13.tags = [tag7, tag9, tag10]
 puts "experience: #{e13.name}, local: #{e13.local.name} "
@@ -182,6 +189,7 @@ e14 = Experience.create!(name: "Pere Lachaise Cemetery",
                          location: "Paris, France",
                          description: "A visit here may sound like a macabre way to spend an afternoon, but a stroll among the tombstones and mausoleums can be fascinating.
                          Pere Lechaise is free to visit but if you want to get more out of the experience, you can take one of the guided tours. A tour lasts 2 to 3 hours and you can see the final resting places of famous people such as Edith Piaf, Jim Morrison and Chopin.",
+                         address: "16 Rue du Repos, 75020 Paris, France",
                          local_id: user2.id)
 e14.tags = [tag5, tag10, tag11]
 puts "experience: #{e14.name}, local: #{e14.local.name} "
@@ -196,6 +204,7 @@ e15 = Experience.create!(name: "Le Scilicet",
                          location: "Paris, France",
                          description: "In the heart of Paris, in the hollow of a bridge over the Seine.
                          Great views of Paris, good mood, good DJ, tapas and drinks while dancing!",
+                         address: "134 Voie Georges Pompidou, 75001 Paris, France",
                          local_id: user2.id)
 e15.tags = [tag2, tag6, tag10]
 puts "experience: #{e15.name}, local: #{e15.local.name} "
@@ -211,6 +220,7 @@ e16 = Experience.create!(name: "Sagrada Familia",
                          description: "Masterpiece of the famous architect Antoni Gaudí.
                          Today, 140 years after the laying of the cornerstone, construction continues on the Basilica!
                          Prebook your tickets, queues are normally 1 or 2 hours long!",
+                         address: "C/ de Mallorca, 401, 08013 Barcelona, Spain",
                          local_id: user3.id)
 e16.tags = [tag9, tag10, tag11]
 puts "experience: #{e16.name}, local: #{e16.local.name} "
@@ -226,6 +236,7 @@ e17 = Experience.create!(name: "Visit Picasso Museum",
                          location: "Barcelona, Spain",
                          description: "Even though Picasso was born in Málaga, he spent many time of his life in Barcelona.
                          With more than 4000 works of the famous artist, you will have a good time if you like art!",
+                         address: "Carrer de Montcada, 15-23, 08003 Barcelona, Spain",
                          local_id: user3.id)
 e17.tags = [tag8, tag9, tag10]
 puts "experience: #{e17.name}, local: #{e17.local.name} "
@@ -240,6 +251,7 @@ e18 = Experience.create!(name: "Montserrat natural park",
                          image_url: "https://s27363.pcdn.co/wp-content/uploads/2020/05/Hiking-Montserrat.jpg.optimal.jpg",
                          location: "Barcelona, Spain",
                          description: "You should definitely make a one-day trip to Montserrat Natural Park to see different parts of the Llobregat River and the pre-coastal mountain range, together with incredible nature.",
+                         address: "Catalunya, Barcelona, Spain",
                          local_id: user3.id)
 e18.tags = [tag1, tag3, tag11]
 puts "experience: #{e18.name}, local: #{e18.local.name} "
@@ -254,6 +266,7 @@ e19 = Experience.create!(name: "Moog NightClub",
                          image_url: "https://www.barcelona-life.com/wp-content/uploads/2018/02/club-moog-barcelona.jpg",
                          location: "Barcelona, Spain",
                          description: "Night club with 2 dance floors at your disposal.Heaven for techno music lovers.",
+                         address: "Carrer de l'Arc del Teatre, 3, 08002 Barcelona, Spain",
                          local_id: user3.id)
 e19.tags = [tag8, tag6, tag12]
 puts "experience: #{e19.name}, local: #{e19.local.name} "
@@ -268,4 +281,3 @@ t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022
 t2 = Trip.create!(city: "New York", start_date: Date.new(2022, 12, 10), end_date: Date.new(2022, 12, 12), user_id: user3.id)
 t3 = Trip.create!(city: "Vancouver", start_date: Date.new(2022, 12, 21), end_date: Date.new(2022, 12, 27), user_id: user2.id)
 t4 = Trip.create!(city: "Barcelona", start_date: Date.new(2022, 12, 29), end_date: Date.new(2023, 01, 02), user_id: user4.id)
-
