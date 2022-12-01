@@ -5,6 +5,9 @@
     <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- app/views/layouts/application.html.erb -->
+    <%= favicon_link_tag "favicon-32x32.png" %>
 
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
@@ -25,12 +28,10 @@
   </head>
 
   <body>
-    <%# <%= render "shared/navbar" unless current_page?(root_path) %>
-    <%= render "shared/navbar" %>
     <%= render "shared/top_bar" %>
     <%= render "shared/flashes" %>
 
-    <div class="mx-1" >
+    <div class="main <%= current_page?(root_path) ? "" : "mx-2" %>">
       <%= yield %>
     </div>
     <%= render "shared/navbar_bottom"%>

@@ -12,7 +12,7 @@
   <% @trip.trip_experiences.each do |trip_exp| %>
     <div class="my-3">
       <%= render 'experiences/my_experience_card', trip: @trip, experience: trip_exp.experience %>
-      <button class="button"><%= link_to "Remove Experience 🗑️", trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } %></button>
+      <button class="button"><%= link_to "Remove Experience", trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } %></button>
     </div>
   <% end %>
 <% end %>

@@ -1,7 +1,22 @@
+<style>
+  .outline {
+    border: 1px solid;
+    border-color: #F8BBD5;
+    border-radius: 15px;
+    padding: 25px;
+  }
+</style>
+<div class="d-flex justify-content-center my-5">
+  <h2>Have You Done This? Leave a Review!</h2>
+</div>
 <div class="container">
-  <%= simple_form_for ([@experience, @review]) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, collection: 1..5 %>
-    <%= f.submit "Add Your Review"  %>
-  <% end %>
+  <div class="outline">
+    <%= simple_form_for ([@experience, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 1..5, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+      <div class="d-flex justify-content-center my-3">
+        <%= f.submit "Add Your Review" %>
+      </div>
+    <% end %>
+  </div>
 </div>

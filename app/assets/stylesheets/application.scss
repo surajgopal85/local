@@ -6,6 +6,8 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "star-rating.js/dist/star-rating.css";
+
 // for flatpickr calendars
 @import "flatpickr/dist/flatpickr";
 @import "flatpickr/dist/themes/airbnb";
@@ -13,3 +15,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// for grounding the footer
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  flex-grow: 1;
+  overflow-y: scroll;
+}

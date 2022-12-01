@@ -1,18 +1,44 @@
+<style>
+  .review-border {
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 25px;
+    border-color: #F8BBD5;
+    margin-top: 25px;
+  }
+
+  .star-box {
+    display: flex;
+  }
+  .star {
+    color: #FED3A0
+  }
+</style>
+
 <div class="container">
   <%= render "reviews/review_form", experience: experience, review: review %>
 </div>
 
 <div class="container">
   <% if experience.reviews.any? %>
+  <br>
     <h3>Reviews of <%= experience.name %></h3>
     <% experience.reviews.each do |rev| %>
-      <h6>Review posted by <%= rev.user.name %></h6>
-      <h6>Rating: <%= rev.rating %></h6>
-      <p><%= rev.content %></p>
+      <div class="review-border">
+        <h6>Review posted by <%= rev.user.name %></h6>
+        <h6>Rating: <% rev.rating.times do |star| %>
+        <div class="star-box">
+          <p class="star"><i class="fa-solid fa-star"></i></p>
+          <% end %>
+        </div>
+        </h6>
+        <p><%= rev.content %></p>
+      </div>
       <% if rev.user.id == current_user.id %>
-        <%= link_to "Edit Your Review!", edit_review_path(rev), class: "button" %>
-        <%= link_to "Delete Your Review!", review_path(rev),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button" %>
+      <div class="d-flex justify-content-space-between">
+        <button class="button"><%= link_to "Edit", edit_review_path(rev) %></button>
+        <button class="button"><%= link_to "Delete", review_path(rev), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+      </div>
       <% end %>
     <% end %>
   <% end %>

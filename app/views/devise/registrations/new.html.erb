@@ -1,4 +1,15 @@
-<h2>Sign up</h2>
+<style>
+  .outline {
+    border: 1px solid;
+    border-color: #F8BBD5;
+    border-radius: 15px;
+    padding: 25px;
+  }
+</style>
+<div class="container">
+<div class="outline">
+
+<h2>Sign up!</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
@@ -27,3 +38,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
