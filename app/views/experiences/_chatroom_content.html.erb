@@ -11,7 +11,7 @@
 <div class="container chatroom"
      data-controller="chatroom-subscription"
      data-chatroom-subscription-experience-id-value="<%= experience.id %>">
-  <h6>#<%= experience.name %></h6>
+  <h6>Ask <%= experience.local.name %> about <%= experience.name %></h6>
   <%# display your messages %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% experience.messages.each do |msg| %>
