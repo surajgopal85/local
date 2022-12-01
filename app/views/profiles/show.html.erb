@@ -11,14 +11,16 @@
   }
 </style>
 <div class="d-flex justify-content-evenly my-3">
-<h2>Your preferences<%= link_to " 🖊 ", profile_edit_path %></h2>
+  <h2>Your preferences<%= link_to " 🖊 ", profile_edit_path %></h2>
 </div>
 
+<div class="d-flex justify-content-evenly my-3 flex-wrap">
   <% if !@user.preferences.nil? %>
-    <% @user.preferences.each do |preference| %>
-      <p><%= preference.tag.name %></p>
+    <% @user.tags.each do |tag| %>
+        <%= render 'shared/preference_tag', tag: tag %>
     <% end %>
   <% end %>
+</div>
 
 <div class="d-flex justify-content-evenly my-3">
   <% if !@user.trips.blank? %>
@@ -33,3 +35,4 @@
 <div class="trip-cards">
   <%= render "trips/list", trips: @trips %>
 </div>
+      <%# <p><%= preference.tag.name %></p> %>
