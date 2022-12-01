@@ -47,37 +47,45 @@ user4.tags = [tag1, tag4, tag6]
 
 
 # seed experiences
-e1 = Experience.create!(name: "Devil's Trail",
-                        image_url: "https://www.muchbetteradventures.com/magazine/content/images/2021/03/GettyImages-177528566--1-.jpg",
-                        location: "Catskills, NY, USA",
-                        description: "25 mile hike in the Catskill mountains! Tough.",
+e20 = Experience.create!(name: "The Cloisters",
+                        image_url: "https://upload.wikimedia.org/wikipedia/commons/0/07/The_Cloisters_-_The_MET_Cloisters_-_Joy_of_Museums_-_2.jpg",
+                        location: "New York, NY",
+                        description: "A museum specializing in European medieval art and architecture, with a focus on the Romanesque and Gothic periods.",
+                        address: "99 Margaret Corbin Dr, New York, NY 10040",
                         local_id: user1.id)
-e1.tags = [tag1, tag3, tag11]
-puts "experience: #{e1.name}, local: #{e1.local.name} "
+e20.tags = [tag1, tag3, tag11]
+puts "experience: #{e20.name}, local: #{e20.local.name} "
 
-e2 = Experience.create!(name: "Empire State Building",
-                        image_url: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Empire_State_Building_%28HDR%29.jpg",
-                        location: "New York, NY, USA",
-                        description: "A landmark in midtown New York—great views!",
-                        local_id: user3.id)
-e2.tags = [tag4]
-puts "experience: #{e2.name}, local: #{e2.local.name} "
 
-e3 = Experience.create!(name: "Les Tables Des Gourmets",
-                        image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0a/f9/24/e1/tables-en-sous-sol.jpg",
-                        location: "Paris, France",
-                        description: "A beautiful restaurant in a chapel! Old, stunning architecture. Simple French food.",
-                        local_id: user2.id)
-e3.tags = [tag2]
-puts "experience: #{e3.name}, local: #{e3.local.name} "
+e21 = Experience.create!(name: "The Metropolitan Museum of Art",
+                        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg/1200px-Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg",
+                        location: "New York, NY",
+                        description: "A heritage museum of classic art spanning many cultures and ages of humanity.",
+                        address: "1000 5th Ave, New York, NY 10028",
+                        local_id: user1.id)
+e21.tags = [tag2]
+puts "experience: #{e21.name}, local: #{e21.local.name} "
 
-e4 = Experience.create!(name: "Views & Hikes on Bowen Island",
-                        image_url: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/9c/90.jpg",
-                        location: "Vancouver, Canada",
-                        description: "A Pacific island close to the Rocky Mountains!",
-                        local_id: user4.id)
-e4.tags = [tag1, tag4, tag11]
-puts "experience: #{e4.name}, local: #{e4.local.name} "
+
+e22 = Experience.create!(name: "John's of Bleecker Street",
+                        image_url: "https://media.timeout.com/images/100446663/image.jpg",
+                        location: "New York, NY",
+                        description: "An amazing slice in the West Village.",
+                        address: "278 Bleecker St, New York, NY 10014",
+                        local_id: user1.id)
+e22.tags = [tag1, tag4]
+
+puts "experience: #{e22.name}, local: #{e22.local.name} "
+
+
+e23 = Experience.create!(name: "House of Yes",
+                        image_url: "https://upload.wikimedia.org/wikipedia/commons/6/64/A_performance_at_the_House_of_Yes_in_Bushwick%2C_Brooklyn.jpg",
+                        location: "Brooklyn, NY, USA",
+                        description: "A must to do, come and ski at night on Grouse Mountain and admire the view over the city from the top of the slopes! It's open till 10pm.",
+                        address: "2 Wyckoff Ave, Brooklyn, NY 11237",
+                        local_id: user1.id)
+e23.tags = [tag1, tag4, tag5]
+puts "experience: #{e23.name}, local: #{e23.local.name} "
 
 e5 = Experience.create!(name: "Local products in the 'End-of-the-line' general store",
                         image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0f/90/8c/be/the-end-of-the-line-local.jpg",
@@ -85,14 +93,13 @@ e5 = Experience.create!(name: "Local products in the 'End-of-the-line' general s
                         description: "Just around the corner when you leave the Baden Powell hicking trail, you are always welcome there. You can sit and have a coffe and home made goodies, or find some local products to taste.",
                         local_id: user4.id)
 e5.tags = [tag2, tag10]
-puts "experience: #{e5.name}, local: #{e5.local.name} "
 
 e6 = Experience.create!(name: "Ski at night and admire the view over the city from the top of the slopes!",
                         image_url: "https://www.vancouverplanner.com/wp-content/uploads/2020/04/grouse-mountain-2.jpeg",
                         location: "Vancouver, Canada",
                         description: "A must to do, come and ski at night on Grouse Mountain and admire the view over the city from the top of the slopes! It's open till 10pm.",
                         local_id: user4.id)
-e6.tags = [tag1, tag4, tag5, tag11]
+e6.tags = [tag4, tag5, tag11]
 puts "experience: #{e6.name}, local: #{e6.local.name} "
 
 e7 = Experience.create!(name: "Museum of anthropology",
@@ -137,17 +144,9 @@ reviewUndergroundsculpture1 = Review.create!(rating: rand(1..5),
                                              user_id: user2.id)
 puts " reviewUndergroundsculpture1 created"
 
-e11 = Experience.create!(name: "Dance all night at House of Yes ",
-                         image_url: "https://img.theculturetrip.com/wp-content/uploads/2019/06/unicornicopia_112517_kr_-7860.jpg",
-                         location: "New York, NY, USA",
-                         description: "House of Yes offers wild events and shows almost every night for every kind of party-goer.
-                         From breathtaking acrobatic shows to late-night glitter-fueled dance parties, this eclectic venue has something for everyone.",
-                         local_id: user1.id)
-e11.tags = [tag6, tag8, tag12]
-puts "experience: #{e11.name}, local: #{e11.local.name} "
 reviewHouseofyes1 = Review.create!(rating: rand(1..5),
                                    content: "Best club I’ve ever been to. Highly recommend buying tickets to performance. As long as you stay, they let you stick around for the dance party the rest of the evening.",
-                                   experience_id: e11.id,
+                                   experience_id: e23.id,
                                    user_id: user3.id)
 puts " reviewHouseofyes1 created"
 
@@ -269,3 +268,4 @@ t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022
 t2 = Trip.create!(city: "New York", start_date: Date.new(2022, 12, 10), end_date: Date.new(2022, 12, 12), user_id: user3.id)
 t3 = Trip.create!(city: "Vancouver", start_date: Date.new(2022, 12, 21), end_date: Date.new(2022, 12, 27), user_id: user2.id)
 t4 = Trip.create!(city: "Barcelona", start_date: Date.new(2022, 12, 29), end_date: Date.new(2023, 01, 02), user_id: user4.id)
+
