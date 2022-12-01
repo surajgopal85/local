@@ -98,8 +98,7 @@ puts "experience: #{e6.name}, local: #{e6.local.name} "
 e7 = Experience.create!(name: "Museum of anthropology",
                         image_url: "https://moa.ubc.ca/wp-content/uploads/2018/03/MOA_140611_0078-2.jpg",
                         location: "Vancouver, Canada",
-                        description: "the Museum of Anthropology (MOA) is a place of world arts and cultures with a special emphasis on the First Nations peoples and other cultural communities of British Columbia, Canada.
-                        MOA is built on the traditional, ancestral and unceded land of the Musqueam people, on the campus of UBC. Fantastic!",
+                        description: "Superb place of world arts and cultures with a special emphasis on the First Nations people, on the campus of UBC. Fantastic!",
                         local_id: user4.id)
 e7.tags = [tag7, tag9, tag8, tag10]
 puts "experience: #{e7.name}, local: #{e7.local.name} "
@@ -134,7 +133,8 @@ e10.tags = [tag8, tag9]
 puts "experience: #{e10.name}, local: #{e10.local.name} "
 reviewUndergroundsculpture1 = Review.create!(rating: rand(1..5),
                                              content: "Loved it, we never look around usually.",
-                                             experience_id: e10.id)
+                                             experience_id: e10.id,
+                                             user_id: user2.id)
 puts " reviewUndergroundsculpture1 created"
 
 e11 = Experience.create!(name: "Dance all night at House of Yes ",
@@ -147,7 +147,8 @@ e11.tags = [tag6, tag8, tag12]
 puts "experience: #{e11.name}, local: #{e11.local.name} "
 reviewHouseofyes1 = Review.create!(rating: rand(1..5),
                                    content: "Best club I’ve ever been to. Highly recommend buying tickets to performance. As long as you stay, they let you stick around for the dance party the rest of the evening.",
-                                   experience_id: e11.id)
+                                   experience_id: e11.id,
+                                   user_id: user3.id)
 puts " reviewHouseofyes1 created"
 
 e12 = Experience.create!(name: "Street art in the city at the Welling Court Mural Project",
@@ -159,7 +160,8 @@ e12.tags = [tag9, tag10, tag11]
 puts "experience: #{e12.name}, local: #{e12.local.name} "
 reviewStreetArt1 = Review.create!(rating: rand(1..5),
                                   content: "Cool pieces.it’d be great for the area to be cleaner. Also, not sure if it was just me but I didn’t see as much as I thought I was going to see.",
-                                  experience_id: e12.id)
+                                  experience_id: e12.id,
+                                  user_id: user4.id)
 puts " reviewStreetArt1 created"
 
 e13 = Experience.create!(name: "The Louvre, you can't miss it...",
@@ -171,7 +173,8 @@ e13.tags = [tag7, tag9, tag10]
 puts "experience: #{e13.name}, local: #{e13.local.name} "
 reviewLouvre1 = Review.create!(rating: rand(1..5),
                                content: "Amazing collection that can be appreciated by even folks who aren’t art connoisseurs! Plan to spend about 3 hrs and pick a handful of things you want to see ahead of time to help map out your visit.",
-                               experience_id: e13.id)
+                               experience_id: e13.id,
+                               user_id: user1.id)
 puts " reviewLouvre1 created"
 
 
@@ -185,7 +188,8 @@ e14.tags = [tag5, tag10, tag11]
 puts "experience: #{e14.name}, local: #{e14.local.name} "
 reviewPerelachaise1 = Review.create!(rating: rand(1..5),
                                      content: "Very big, the guided tour is cool, we learn a lot of anecdotes about people resting there.",
-                                     experience_id: e14.id)
+                                     experience_id: e14.id,
+                                     user_id: user3.id)
 puts " reviewPerelachaise1 created"
 
 e15 = Experience.create!(name: "Le Scilicet",
@@ -198,7 +202,8 @@ e15.tags = [tag2, tag6, tag10]
 puts "experience: #{e15.name}, local: #{e15.local.name} "
 reviewScilicet1 = Review.create!(rating: rand(1..5),
                                  content: "Good place to have a drink, but next time I won't order food: too expensive and don't worth it.",
-                                 experience_id: e15.id)
+                                 experience_id: e15.id,
+                                 user_id: user4.id)
 puts " reviewScilicet1 created"
 
 e16 = Experience.create!(name: "Sagrada Familia",
@@ -212,7 +217,8 @@ e16.tags = [tag9, tag10, tag11]
 puts "experience: #{e16.name}, local: #{e16.local.name} "
 reviewSagradafamilia1 = Review.create!(rating: rand(1..5),
                                        content: "Absolutely worth a visit!",
-                                       experience_id: e16.id)
+                                       experience_id: e16.id,
+                                       user_id: user1.id)
 puts " reviewSagradafamilia1 created"
 
 
@@ -226,7 +232,8 @@ e17.tags = [tag8, tag9, tag10]
 puts "experience: #{e17.name}, local: #{e17.local.name} "
 reviewPicassoMuseum1 = Review.create!(rating: rand(1..5),
                                       content: "Interesting, learned a lot about hte artist.",
-                                      experience_id: e17.id)
+                                      experience_id: e17.id,
+                                      user_id: user2.id)
 puts " reviewPicassoMuseum1 created"
 
 
@@ -239,7 +246,8 @@ e18.tags = [tag1, tag3, tag11]
 puts "experience: #{e18.name}, local: #{e18.local.name} "
 reviewMonserratPark1 = Review.create!(rating: rand(1..5),
                                       content: "You need to plan a one-day-trip to go there, but it great.",
-                                      experience_id: e18.id)
+                                      experience_id: e18.id,
+                                      user_id: user4.id)
 puts " reviewMonserratPark1 created"
 
 
@@ -252,7 +260,8 @@ e19.tags = [tag8, tag6, tag12]
 puts "experience: #{e19.name}, local: #{e19.local.name} "
 reviewMoog1 = Review.create!(rating: rand(1..5),
                              content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
-                             experience_id: e19.id)
+                             experience_id: e19.id,
+                             user_id: user1.id)
 puts " reviewMoog1 created"
 
 # seed trips
