@@ -1,13 +1,14 @@
 class ExperiencesController < ApplicationController
   def index
     @experiences = Experience.all
-
+    # puts @experiences.class
     @markers = @experiences.geocoded.map do |experience|
       {
         lat: experience.latitude,
         lng: experience.longitude
       }
     end
+    # puts @markers.class
   end
 
   def new
@@ -72,6 +73,16 @@ class ExperiencesController < ApplicationController
     end
     @selected_experiences.uniq!{ |exp| exp[0].id}
     @selected_experiences = @selected_experiences.sort_by { |x| x[1] }.reverse.map(&:first)
+    # puts @selected_experiences.class
+
+    @markers = []
+    @selected_experiences.each do |experience|
+      marker = {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
+      @markers << marker
+    end
   end
 
   def my_experience
