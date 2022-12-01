@@ -200,8 +200,8 @@ reviewScilicet1 = Review.new(rating: rand(1..5),
 e16 = Experience.create!(name: "Sagrada Familia",
                          image_url: "https://cdn.futura-sciences.com/sources/images/Sagrada-Familia-Barcelone.jpg",
                          location: "Barcelona, Spain",
-                         description: "Masterpiece of the famous architect Antoni Gaudí, the project was promoted by the people for the people.
-                         Today, more than 140 years after the laying of the cornerstone, construction continues on the Basilica!
+                         description: "Masterpiece of the famous architect Antoni Gaudí.
+                         Today, 140 years after the laying of the cornerstone, construction continues on the Basilica!
                          Prebook your tickets, queues are normally 1 or 2 hours long!",
                          local_id: user3.id)
 e16.tags = [tag9, tag10, tag11]
@@ -219,7 +219,33 @@ e17 = Experience.create!(name: "Visit Picasso Museum",
                          local_id: user3.id)
 e17.tags = [tag8, tag9, tag10]
 puts "experience: #{e17.name}, local: #{e17.local.name} "
+reviewPicassoMuseum1 = Review.new(rating: rand(1..5),
+                                 content: "Interesting, learned a lot about hte artist.",
+                                 experience_id: e17.id)
 
+
+e18 = Experience.create!(name: "Montserrat natural park",
+                         image_url: "https://s27363.pcdn.co/wp-content/uploads/2020/05/Hiking-Montserrat.jpg.optimal.jpg",
+                         location: "Barcelona, Spain",
+                         description: "You should definitely make a one-day trip to Montserrat Natural Park to see different parts of the Llobregat River and the pre-coastal mountain range, together with incredible nature.",
+                         local_id: user3.id)
+e18.tags = [tag1, tag3, tag11]
+puts "experience: #{e18.name}, local: #{e18.local.name} "
+review1 = Review.new(rating: rand(1..5),
+                     content: "You need to plan a one-day-trip to go there, but it great.",
+                     experience_id: e18.id)
+
+
+e19 = Experience.create!(name: "Moog NightClub",
+                        image_url: "https://www.barcelona-life.com/wp-content/uploads/2018/02/club-moog-barcelona.jpg",
+                        location: "Barcelona, Spain",
+                        description: "Night club with 2 dance floors at your disposal.Heaven for techno music lovers.",
+                        local_id: user3.id)
+e19.tags = [tag8, tag6, tag12]
+puts "experience: #{e19.name}, local: #{e19.local.name} "
+review1 = Review.new(rating: rand(1..5),
+                     content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
+                     experience_id: e19.id)
 
 # seed trips
 t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022, 12, 4), user_id: user1.id)
