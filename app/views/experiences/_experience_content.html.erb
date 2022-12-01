@@ -1,3 +1,11 @@
+<style>
+  .tag-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+</style>
+
 <div class="mx-2">
   <div class="container experience-title" style="background-image: url(
     <% if experience.image_url == "" %>
@@ -18,9 +26,11 @@
     <br>
   </div>
     <div class="experience-tag">
+        <div class="tag-box">
       <% experience.tags.each do |tag| %>
-        <%= render "shared/preference_tag", tag: tag %>
-      <% end %>
+          <%= render "shared/preference_tag", tag: tag %>
+        <% end %>
+        </div>
     </div>
     <%= render 'shared/local_user_card' %>
 </div>
