@@ -26,11 +26,11 @@
     <br>
   </div>
     <div class="experience-tag">
-      <% experience.tags.each do |tag| %>
-        <div class="tag-box">
+      <div class="tag-box">
+        <% experience.tags.each do |tag| %>
           <%= render "shared/preference_tag", tag: tag %>
-        </div>
         <% end %>
+      </div>
     </div>
     <%= render 'shared/local_user_card' %>
 </div>
