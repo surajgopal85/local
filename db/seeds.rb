@@ -166,7 +166,7 @@ e13 = Experience.create!(name: "The Louvre, you can't miss it...",
                          image_url: "https://www.cap-voyage.com/wp-content/uploads/2019/12/paris-louvre.jpg",
                          location: "Paris, France",
                          description: "No need for a description here! One trick: The Louvre is a very busy place. To avoid the crowd, book your ticket online for a wednesday or friday evening!",
-                         local_id: user3.id)
+                         local_id: user2.id)
 e13.tags = [tag7, tag9, tag10]
 puts "experience: #{e13.name}, local: #{e13.local.name} "
 reviewLouvre1 = Review.new(rating: rand(1..5),
@@ -182,8 +182,8 @@ e14 = Experience.create!(name: "Pere Lachaise Cemetery",
 e14.tags = [tag5, tag10, tag11]
 puts "experience: #{e14.name}, local: #{e14.local.name} "
 reviewPerelachaise1 = Review.new(rating: rand(1..5),
-                           content: "Very big, the guided tour is cool, we learn a lot of anecdotes about people resting there.",
-                           experience_id: e14.id)
+                                 content: "Very big, the guided tour is cool, we learn a lot of anecdotes about people resting there.",
+                                 experience_id: e14.id)
 
 e15 = Experience.create!(name: "Le Scilicet",
                          image_url: "https://cdn.sortiraparis.com/images/80/88174/490087-bar-le-scilicet-les-photos.jpg",
@@ -194,8 +194,8 @@ e15 = Experience.create!(name: "Le Scilicet",
 e15.tags = [tag2, tag6, tag10]
 puts "experience: #{e15.name}, local: #{e15.local.name} "
 reviewScilicet1 = Review.new(rating: rand(1..5),
-                                 content: "Good place to have a drink, but next time I won't order food: too expensive and don't worth it.",
-                                 experience_id: e15.id)
+                             content: "Good place to have a drink, but next time I won't order food: too expensive and don't worth it.",
+                             experience_id: e15.id)
 
 e16 = Experience.create!(name: "Sagrada Familia",
                          image_url: "https://cdn.futura-sciences.com/sources/images/Sagrada-Familia-Barcelone.jpg",
@@ -207,8 +207,8 @@ e16 = Experience.create!(name: "Sagrada Familia",
 e16.tags = [tag9, tag10, tag11]
 puts "experience: #{e16.name}, local: #{e16.local.name} "
 reviewSagradafamilia1 = Review.new(rating: rand(1..5),
-                                 content: "Absolutely worth a visit!",
-                                 experience_id: e16.id)
+                                   content: "Absolutely worth a visit!",
+                                   experience_id: e16.id)
 
 
 e17 = Experience.create!(name: "Visit Picasso Museum",
@@ -220,8 +220,8 @@ e17 = Experience.create!(name: "Visit Picasso Museum",
 e17.tags = [tag8, tag9, tag10]
 puts "experience: #{e17.name}, local: #{e17.local.name} "
 reviewPicassoMuseum1 = Review.new(rating: rand(1..5),
-                                 content: "Interesting, learned a lot about hte artist.",
-                                 experience_id: e17.id)
+                                  content: "Interesting, learned a lot about hte artist.",
+                                  experience_id: e17.id)
 
 
 e18 = Experience.create!(name: "Montserrat natural park",
@@ -231,21 +231,21 @@ e18 = Experience.create!(name: "Montserrat natural park",
                          local_id: user3.id)
 e18.tags = [tag1, tag3, tag11]
 puts "experience: #{e18.name}, local: #{e18.local.name} "
-review1 = Review.new(rating: rand(1..5),
-                     content: "You need to plan a one-day-trip to go there, but it great.",
-                     experience_id: e18.id)
+reviewMonserratPark1 = Review.new(rating: rand(1..5),
+                                  content: "You need to plan a one-day-trip to go there, but it great.",
+                                  experience_id: e18.id)
 
 
 e19 = Experience.create!(name: "Moog NightClub",
-                        image_url: "https://www.barcelona-life.com/wp-content/uploads/2018/02/club-moog-barcelona.jpg",
-                        location: "Barcelona, Spain",
-                        description: "Night club with 2 dance floors at your disposal.Heaven for techno music lovers.",
-                        local_id: user3.id)
+                         image_url: "https://www.barcelona-life.com/wp-content/uploads/2018/02/club-moog-barcelona.jpg",
+                         location: "Barcelona, Spain",
+                         description: "Night club with 2 dance floors at your disposal.Heaven for techno music lovers.",
+                         local_id: user3.id)
 e19.tags = [tag8, tag6, tag12]
 puts "experience: #{e19.name}, local: #{e19.local.name} "
-review1 = Review.new(rating: rand(1..5),
-                     content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
-                     experience_id: e19.id)
+reviewMoog1 = Review.new(rating: rand(1..5),
+                         content: "Good music if you like techno, a bit expensive though and definetly too crowdy.",
+                         experience_id: e19.id)
 
 # seed trips
 t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022, 12, 4), user_id: user1.id)
