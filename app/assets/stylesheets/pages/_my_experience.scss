@@ -1,0 +1,19 @@
+.add-button {
+  display:flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  .experience{
+    width: 100%;
+    margin-bottom: 15px;
+
+  }
+  .back{
+    background-color: $lavender;
+    border-color: $lavender;
+  }
+}
+.grouping {
+  display: flex;
+  justify-content: space-around;
+}
