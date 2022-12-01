@@ -1,27 +1,10 @@
-<style>
-  .add-button {
-    display:flex;
-    justify-content: center;
-  }
-  .grouping {
-    display: flex;
-    justify-content: space-around;
-  }
-</style>
-
-<div class="grouping">
-  <button class="button"><%= link_to "Back to Suggestions", my_experiences_path(@trip) %></button>
-  <button class="button"><%= link_to "Trip Completed", trip_path(@trip) %></button>
-</div>
-<div class="add-button">
-  <button class="button"><%=link_to "Add to #{@trip.city}", my_experience_path(@trip, @experience), data: { 'turbo-method' => :post } %></button>
-</div>
 <div class="mx-3">
 <%= render 'experience_content', experience: @experience %>
 </div>
-
-
-
+<div class="add-button mx-4">
+  <button class="button experience"><%=link_to "Add to My Trip", my_experience_path(@trip, @experience), data: { 'turbo-method' => :post } %></button>
+  <button class="button experience back"><%= link_to "Back to Suggestions", my_experiences_path(@trip) %></button>
+</div>
 <%# test to add the chatroom code in a partial %>
 <%= render 'chatroom_content', experience: @experience, message: @message %>
 <%# test to add the chatroom code in a partial %>
