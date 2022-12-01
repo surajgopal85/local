@@ -1,11 +1,28 @@
-<h1>What do you love to do on vacation?</h1>
-<p>Choose your favorite travel preferences:</p>
-
-<br>
-<br>
 <%# simple_form_for preferences? %>
 <%# we want to create a new preference for each tag chosen by a new user %>
-<%= simple_form_for(@preference) do |f| %>
-    <%= f.association :tag, :as => :check_boxes  %>
-    <%= f.submit 'Save Your Preferences!', class: 'btn btn-secondary' %>
-<% end %>
+<style>
+  .outline {
+    border: 1px solid;
+    border-color: #F8BBD5;
+    border-radius: 15px;
+    padding: 25px;
+  }
+</style>
+<br>
+  <h2>What do you Love to do on Vacation?</h2>
+  <br>
+<div class="d-flex justify-content-evenly flex-wrap my-2">
+  <p>Choose your favorite travel preferences:</p>
+</div>
+<div class="container my-3">
+  <div class="outline">
+    <%= simple_form_for(@preference) do |f| %>
+    <div class="d-flex justify-content-evenly flex-wrap my-2">
+      <%= f.association :tag, :as => :check_boxes  %>
+    </div>
+        <div class="d-flex justify-content-center">
+          <%= f.submit 'Save Your Preferences!', class: 'button' %>
+        </div>
+    <% end %>
+  </div>
+</div>

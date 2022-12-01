@@ -3,6 +3,8 @@
 <h3 class="text-center">We found <%= pluralize @selected_experiences.size, "suggestion" %> for you:</h3>
 <br>
 
+    <%= render 'shared/map' %>
+
     <% @selected_experiences.each do |experience| %>
 
       <%= render 'my_experience_card', trip: @trip, experience: experience %>
