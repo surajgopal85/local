@@ -11,9 +11,11 @@
 </div>
 <% if @trip.trip_experiences.size > 0 %>
   <% @trip.trip_experiences.each do |trip_exp| %>
-    <div class="my-3">
+    <div class="d-flex align-items-center justify-content-center my-3">
       <%= render 'experiences/my_experience_card', trip: @trip, experience: trip_exp.experience %>
-      <button class="button-pimped"><%= link_to "Remove Experience", trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } %></button>
+      <%= link_to trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
     </div>
   <% end %>
 <% end %>
