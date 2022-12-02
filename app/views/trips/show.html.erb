@@ -14,7 +14,7 @@
     <div class="d-flex align-items-center justify-content-center my-3">
       <%= render 'experiences/my_experience_card', trip: @trip, experience: trip_exp.experience %>
       <%= link_to trip_experience_path(trip_exp), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that experience from your trip?' } do %>
-        <i class="fa-solid fa-trash"></i>
+        <i class="fa-solid fa-trash" id="trash"></i>
       <% end %>
     </div>
   <% end %>
