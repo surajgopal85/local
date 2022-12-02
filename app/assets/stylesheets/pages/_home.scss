@@ -17,12 +17,14 @@
 
 .btn-ghost {
   color: $summer-yellow;
-  border: 2px solid $db-green;
+  border: 3px solid $summer-yellow;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight:bold;
+  // opacity: 0.6;
   transition: opacity 0.3s ease;
+  // background-color: $db-green;
+  color: white;
 }
 
 .btn-ghost:hover {
