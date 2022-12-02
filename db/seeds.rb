@@ -284,3 +284,4 @@ t1 = Trip.create!(city: "Paris", start_date: Date.today, end_date: Date.new(2022
 t2 = Trip.create!(city: "New York", start_date: Date.new(2022, 12, 10), end_date: Date.new(2022, 12, 12), user_id: user3.id)
 t3 = Trip.create!(city: "Vancouver", start_date: Date.new(2022, 12, 21), end_date: Date.new(2022, 12, 27), user_id: user2.id)
 t4 = Trip.create!(city: "Barcelona", start_date: Date.new(2022, 12, 29), end_date: Date.new(2023, 01, 02), user_id: user4.id)
+t5 = Trip.create!(city: "Barcelona", start_date: Date.new(2022, 08, 24), end_date: Date.new(2022, 09, 01), user_id: user5.id)
