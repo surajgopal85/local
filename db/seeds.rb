@@ -44,6 +44,8 @@ puts "user #{user3.name} created with user_id#{user3.name}"
 user4 = User.create!(name: "Nea", email: "nea@local.com", password: "123456")
 puts "user #{user4.name} created with user_id#{user4.name}"
 user4.tags = [tag1, tag4, tag6]
+user5 = User.create!(name: "Rob", email: "Rob@local.com", password: "123456")
+puts "user #{user5.name} created with user_id#{user5.name}"
 
 
 # seed experiences
