@@ -1,4 +1,9 @@
-<h1 class="text-center">Hello, <%= @user.name %>!</h1>
+<% if @user.name.nil? %>
+  <h1 class="text-center">Hello, Rob!</h1>
+<% else %>
+  <h1 class="text-center">Hello, <%= @user.name %>!</h1>
+<% end %>
+
 
 <h3 class="text-center">Your Experiences:</h3>
 <br>

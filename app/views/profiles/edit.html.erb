@@ -10,7 +10,7 @@
 <div class="container">
   <div class="outline">
 
-    <h1>Update all your preferences</h1>
+    <h1>Update your interests</h1>
 
     <%= simple_form_for(current_user) do |f| %>
       <hr>
@@ -18,7 +18,7 @@
         <%= render 'preference_fields', f: preference %>
       <% end %>
       <div class="links">
-        <button class="add-tag-button"><%= link_to_add_association 'add preference', f, :preferences %></button>
+        <button class="add-tag-button"><%= link_to_add_association 'Add Interest', f, :preferences %></button>
       </div>
       <div class="d-flex justify-content-center my-3">
         <%= f.submit %>
