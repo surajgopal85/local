@@ -38,7 +38,7 @@
         <% if rev.user_id == current_user.id %>
         <div class="d-flex justify-content-space-between">
           <button class="button"><%= link_to "Edit", edit_review_path(rev) %></button>
-          <button class="button-pimped"><%= link_to "Delete", review_path(rev), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+          <button class="button-purple"><%= link_to "Delete", review_path(rev), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
         </div>
         <% end %>
       <% end %>
