@@ -21,7 +21,6 @@
 <% end %>
 
 <div class="d-flex justify-content-evenly my-3">
-  <%= render "trips/edit_trip_modal", trip: @trip %>
-  <button class="button-purple"><%= link_to "Delete Trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' } %></button>
+<button class="button-purple"><%= link_to "Delete Trip", trip_path(@trip), data: { turbo_method: :delete, turbo_confirm: 'Sure you want to delete that trip?' } %></button>
 
 </div>
